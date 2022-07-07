@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    background-image: url('img/background-home.jpg');
+}
+
+.font-color-blue {
+    color: #001cb5;
+}
+
+.join-name h2 {
+    margin: 6px;
+}
+
+.join-name {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.join-name h1 {
+    margin-bottom: 22px;
+}
+
+.join-name h2 {
+    margin: 6px;
+}
+
+.sections {
+    margin-top: 24px;
+}
+
+.section-top, .section-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-board, .section-backlog, .section-addtask, .section-help {
+    height: 220px;
+    width: 320px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #0025f3;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 24px;
+    margin-right: 54px;
+    opacity: 0.5;
+}
+
+.setion-hover:hover {
+    opacity: 1;
+    color: white;
+}
+
+.bg-board {
+    background-image: url('img/section-board.jpg');
+}
+
+.bg-backlog {
+    background-image: url('img/section-backlog.jpg');
+}
+
+.bg-addtask {
+    background-image: url('img/section-addtask.jpg');
+}
+
+.bg-help {
+    background-image: url('img/section-help.jpg');
+}
