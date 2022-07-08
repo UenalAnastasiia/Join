@@ -3,8 +3,8 @@ body {
     background-image: url('img/background-home.jpg');
 }
 
-.font-color-blue {
-    color: #001cb5;
+.font-color {
+    color: #391e7af7;
 }
 
 .a-standart {
@@ -17,7 +17,7 @@ body {
 }
 
 .greyhover:hover {
-    color: rgba(148, 148, 148, 0.863);
+    color: black;
     transform: scale(1.1);
     transition: 225ms ease-in-out;
     background-position: 0 100%;
@@ -43,7 +43,7 @@ body {
 }
 
 .join-name {
-    margin-top: 22px;
+    margin-top: 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,14 +53,21 @@ body {
 .join-name h1 {
     margin-bottom: 22px;
     font-size: 48px;
+    box-shadow: -2px 0px 6px 0px rgb(0 0 0 / 20%);
+    padding: 8px;
 }
 
-.h2-margin {
-    margin-top: 24px !important;
+.slog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    margin-top: 24sspx;
 }
 
 .sections {
-    margin-top: 24px;
+    margin-top: 12px;
 }
 
 .section-top, .section-bottom {
@@ -84,10 +91,11 @@ body {
     margin-top: 24px;
     margin-right: 54px;
     border-radius: 30px;
+    box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
 }
 
 .section-board h3, .section-backlog h3, .section-addtask h3, .section-help h3 {
-    background: #e7e7e7d1;
+    background: #e7e7e794;
     border-radius: 10px;
     padding: 4px;
 }
@@ -119,12 +127,15 @@ body {
     height: 100vh;
     width: 200px;
     position: absolute;
-    background-color: #001cb5;
+    /* background-color: #001cb5; */
+    background-color: #766b8f70;
     top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    outline: 1px solid rgb(255 255 255 / 38%);
+    outline-offset: -10px;
 }
 
 .header-navbar-links, .header-footer-links {
@@ -142,6 +153,7 @@ body {
     color: white;
     font-size: 20px;
     margin-bottom: 24px;
+    font-weight: bold;
 }
 
 .footer-links {
