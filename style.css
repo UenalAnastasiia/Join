@@ -109,6 +109,7 @@ body {
     background-image: url('img/section-help.jpg');
 }
 
+<<<<<<< HEAD
 .header-navbar {
     height: 100vh;
     width: 200px;
@@ -147,10 +148,16 @@ body {
     margin-bottom: 12px;
 }
 
+=======
+>>>>>>> 43890d6e9c5f90dd0e03f2053713150a036c182f
 /* ====== STYLE - LEON ====== */
 
 .navbar {
     height: 90vh;
     width: 200px;
+<<<<<<< HEAD
     
+=======
+    background-color: ;
+>>>>>>> 43890d6e9c5f90dd0e03f2053713150a036c182f
 }
