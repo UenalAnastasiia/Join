@@ -18,6 +18,9 @@ body {
 
 .greyhover:hover {
     color: rgba(148, 148, 148, 0.863);
+    transform: scale(1.1);
+    transition: 225ms ease-in-out;
+    background-position: 0 100%;
 }
 
 .main {
@@ -91,6 +94,9 @@ body {
 
 .section-hover:hover {
     opacity: 0.7;
+    transform: scale(1.1);
+    transition: 225ms ease-in-out;
+    background-position: 0 100%;
 }
 
 .bg-board {
@@ -136,9 +142,6 @@ body {
     color: white;
     font-size: 20px;
     margin-bottom: 24px;
-/*     margin-top: 12px;
-    margin-bottom: 12px;
-    margin-left: 24px; */
 }
 
 .footer-links {

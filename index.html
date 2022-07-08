@@ -11,35 +11,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body onload="init()">
     <!-- 
         Falls wir Login-Fenster machen sollten, wird es als erstes kommen
      -->
-    <header>
-        <div class="header-navbar">
-            <div class="nav-logo">
-                <img src="img/joinlogo.png">
-            </div>
-
-            <div class="header-navbar-links">
-                <a class="a-standart cursor greyhover" href="board.html">Board</a>
-                <a class="a-standart cursor greyhover" href="#">Backlog</a>
-                <a class="a-standart cursor greyhover" href="#">Add Task</a>
-                <a class="a-standart cursor greyhover" href="#">Help</a>
-            </div>
-
-            <div class="header-footer-links">
-                <a class="a-standart cursor footer-links greyhover" href="#">Impressum</a>
-                <a class="a-standart cursor footer-links greyhover" href="#">Datenschutz</a>
-            </div>
-        </div>
-    </header>
+    <div w3-include-html="navbar.html"></div>
 
     <div class="main">
         <div class="join-name font-color-blue">
             <h1>JOIN - Your Project Management Tool</h1>
-            <h2 class="h2-margin">Here can you save all your Projects in One Place</h2>
-            <h2>JUST TRY IT!</h2>
+            <h2 class="h2-margin">Here you can save all your Projects in One Place</h2>
+            <h2>Enjoy your work!</h2>
         </div>
 
         <div class="sections">
@@ -72,7 +54,7 @@
             </div>
         </div>
     </div>
-
+    
+    <script src="include.js"></script>
 </body>
-
 </html>
