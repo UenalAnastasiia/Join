@@ -79,3 +79,11 @@ body {
 .bg-help {
     background-image: url('img/section-help.jpg');
 }
+
+/* ====== STYLE - LEON ====== */
+
+.navbar {
+    height: 90vh;
+    width: 200px;
+    background-color: ;
+}
