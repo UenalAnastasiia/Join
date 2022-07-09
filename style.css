@@ -162,9 +162,38 @@ body {
     margin-bottom: 12px;
 }
 
-/* ====== STYLE - LEON ====== */
+/* ====== STYLE - BOARD ====== */
 
-.navbar {
-    height: 90vh;
+.board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 200px);
+    height: 100vh;
+    margin-left: auto;
+}
+
+.boardContent {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 85vh;
     width: 200px;
+    justify-content: center;
+    margin: 0px 8px;
+}
+
+.boardContent span {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    
+}
+
+.test {
+    height: 85%;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: #ffffff;
 }
