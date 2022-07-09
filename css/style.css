@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-image: url('img/background-home.jpg');
+    background-image: url('../img/background-home.jpg');
 }
 
 .font-color {
@@ -101,19 +101,19 @@ body {
 }
 
 .bg-board {
-    background-image: url('img/section-board.jpg');
+    background-image: url('../img/section-board.jpg');
 }
 
 .bg-backlog {
-    background-image: url('img/section-backlog.jpg');
+    background-image: url('../img/section-backlog.jpg');
 }
 
 .bg-addtask {
-    background-image: url('img/section-addtask.jpg');
+    background-image: url('../img/section-addtask.jpg');
 }
 
 .bg-help {
-    background-image: url('img/section-help.jpg');
+    background-image: url('../img/section-help.jpg');
 }
 
 .header-navbar {
@@ -172,40 +172,4 @@ body {
     padding-right: 14px;
     padding-top: 4px;
     padding-bottom: 4px
-}
-
-/* ====== STYLE - BOARD ====== */
-
-.board {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: calc(100% - 200px);
-    height: 100vh;
-    margin-left: auto;
-}
-
-.boardContent {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 85vh;
-    width: 200px;
-    justify-content: center;
-    margin: 0px 8px;
-}
-
-.boardContent span {
-    text-align: center;
-    font-size: 24px;
-    font-weight: 600;
-    
-}
-
-.test {
-    height: 85%;
-    width: 100%;
-    border: 1px solid black;
-    border-radius: 4px;
-    background-color: #ffffff;
 }
