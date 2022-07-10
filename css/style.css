@@ -16,111 +16,11 @@ body {
     cursor: pointer;
 }
 
-.main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left: 200px;
-}
-
-.nav-logo {
-    display: flex;
-    justify-content: center;
-    margin-top: 24px;
-}
-
-.join-name h2 {
-    margin: 2px;
-    color: #5a5050;
-}
-
-.join-name {
-    margin-top: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.join-name h1 {
-    margin-bottom: 22px;
-    font-size: 48px;
-    box-shadow: -2px 0px 6px 0px rgb(0 0 0 / 20%);
-    padding: 8px;
-}
-
-.slog {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 4px;
-    margin-top: 24sspx;
-}
-
-.sections {
-    margin-top: 12px;
-}
-
-.section-top, .section-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.section-board, .section-backlog, .section-addtask, .section-help {
-    height: 210px;
-    width: 320px;
-    background-position: bottom;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: black;
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 24px;
-    margin-right: 54px;
-    border-radius: 30px;
-    box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
-}
-
-.section-board h3, .section-backlog h3, .section-addtask h3, .section-help h3 {
-    background: #e7e7e794;
-    border-radius: 10px;
-    padding: 4px;
-}
-
-.section-hover:hover {
-    opacity: 0.7;
-    transform: scale(1.1);
-    transition: 225ms ease-in-out;
-    background-position: 0 100%;
-}
-
-.bg-board {
-    background-image: url('../img/section-board.jpg');
-}
-
-.bg-backlog {
-    background-image: url('../img/section-backlog.jpg');
-}
-
-.bg-addtask {
-    background-image: url('../img/section-addtask.jpg');
-}
-
-.bg-help {
-    background-image: url('../img/section-help.jpg');
-}
-
+/* Style navbar.html */
 .header-navbar {
     height: 100vh;
     width: 200px;
     position: absolute;
-    /* background-color: #001cb5; */
     background-color: #766b8f70;
     top: 0;
     left: 0;
@@ -173,3 +73,115 @@ body {
     padding-top: 4px;
     padding-bottom: 4px
 }
+/* End Style navbar.html */
+/* ##################################################### */
+/* Style Main Page */
+.joinMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 200px;
+}
+
+.nav-logo {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.join-name h2 {
+    margin: 2px;
+    color: #5a5050;
+}
+
+.join-name {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.join-name h1 {
+    margin-bottom: 22px;
+    font-size: 48px;
+    box-shadow: -2px 0px 6px 0px rgb(0 0 0 / 20%);
+    padding: 8px;
+}
+
+.joinSlog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    margin-top: 24sspx;
+}
+
+.joinSections {
+    margin-top: 12px;
+}
+
+.joinSection-top, .joinSection-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.joinSection-board, .joinSection-backlog, .joinSection-addtask, .joinSection-help {
+    height: 210px;
+    width: 320px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 24px;
+    margin-right: 54px;
+    border-radius: 30px;
+    box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
+}
+
+.joinSection-board h3, .joinSection-backlog h3, .joinSection-addtask h3, .joinSection-help h3 {
+    background: #e7e7e794;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.joinSection-hover:hover {
+    opacity: 0.7;
+    transform: scale(1.1);
+    transition: 225ms ease-in-out;
+    background-position: 0 100%;
+}
+
+.join-bg-board {
+    background-image: url('../img/section-board.jpg');
+}
+
+.join-bg-backlog {
+    background-image: url('../img/section-backlog.jpg');
+}
+
+.join-bg-addtask {
+    background-image: url('../img/section-addtask.jpg');
+}
+
+.join-bg-help {
+    background-image: url('../img/section-help.jpg');
+}
+/* End Style Main Page */
+/* ##################################################### */
+/* Style addtask.html */
+.addtaskContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+}
+/* End Style addtask.html */
+/* ##################################################### */
