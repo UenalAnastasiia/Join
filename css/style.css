@@ -16,7 +16,8 @@ body {
     cursor: pointer;
 }
 
-/* Style navbar.html */
+/* ====== NAVBAR ====== */
+
 .header-navbar {
     height: 100vh;
     width: 200px;
@@ -73,9 +74,9 @@ body {
     padding-top: 4px;
     padding-bottom: 4px
 }
-/* End Style navbar.html */
-/* ##################################################### */
-/* Style Main Page */
+
+/* ====== MAIN PAGE ====== */
+
 .joinMain {
     display: flex;
     flex-direction: column;
@@ -175,13 +176,158 @@ body {
 .join-bg-help {
     background-image: url('../img/section-help.jpg');
 }
-/* End Style Main Page */
-/* ##################################################### */
-/* Style addtask.html */
+
+/* ====== ADD TASK ====== */
+
 .addtaskContainer {
     display: flex;
     flex-direction: column;
     margin-left: 200px;
 }
-/* End Style addtask.html */
-/* ##################################################### */
+
+.addtaskHeader {
+    margin-left: 42px;
+    margin-top: 32px;
+}
+
+.taskForm {
+    margin-left: 42px;
+    margin-top: 46px;
+}
+
+.taskForm {
+    background-color: #766b8f4f;
+    box-shadow: -2px 0px 6px 0px rgb(0 0 0 / 20%);
+    margin-right: 42px;
+    border-radius: 15px;
+    outline: 2px solid rgb(255 255 255 / 38%);
+    outline-offset: -10px;
+}
+
+form {
+    margin-bottom: 36px;
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.taskForm h3 {
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+.addtaskContainer h2 {
+    margin-bottom: 6px;
+}
+
+.addtaskContainer span {
+    color: #1e3190;
+}
+
+.taskForm-left textarea {
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    resize: none;
+    outline: none;
+    border: solid 1px rgb(210, 210, 212);
+}
+
+.taskForm h3 {
+    padding-left: 10px;
+}
+
+.taskForm input, select {
+    font-size: 18px;
+    height: 40px;
+    width: 400px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    box-shadow: -2px 0px 6px 0px rgb(0 0 0 / 20%);
+    padding-left: 10px;
+}
+
+.taskForm input {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+select {
+    width: 420px;
+}
+
+.taskForm-description textarea {
+    height: 200px;
+    width: 400px;
+    border-radius: 15px;
+    box-shadow: -2px 0px 6px 0px rgb(0 0 0 / 20%);
+    padding-left: 10px;
+}
+
+.taskForm-account {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.taskForm-account img {
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    border: 1px solid white;
+    margin-right: 12px;
+}
+
+.plus-img {
+    height: 20px !important;
+    width: 20px !important;
+    padding: 6px;
+}
+
+.plus-img:hover {
+    background: white;
+    border: 1px solid #391e7af7;
+    cursor: pointer;
+}
+
+.taskForm-buttons {
+    margin-top: 60px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+button {
+    background-color: #ffffff00;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid white;
+    color: white;
+    font-size: 18px;
+    margin-right: 24px;
+}
+
+button:last-child {
+    background-color: #391e7af7;
+}
+
+.opacity:hover {
+    opacity: 0.7;
+    border: 1px solid #391e7af7;
+    cursor: pointer;
+}
+
+button:first-child:hover {
+    color: white;
+    border: 1px solid white;
+    background: #391e7af7;
+    cursor: pointer;
+}
+
+button:last-child:hover {
+    color: white;
+    border: 1px solid #391e7af7;
+    background: #ffffff00;
+    cursor: pointer;
+}

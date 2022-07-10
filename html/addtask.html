@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,18 +17,69 @@
     <div w3-include-html="../html/navbar.html"></div>
     <div class="addtaskContainer">
         <div class="addtaskHeader">
-            <h2>Add Task</h2>
+            <h2 class="font-color">Add Task</h2>
             <span>Learning Management System Project</span>
         </div>
 
         <div class="taskForm">
-            <form action="">
-                
+            <form>
+                <div class="taskForm-left">
+                    <div class="taskForm-title">
+                        <h3 class="font-color">TITLE</h3>
+                        <input required type="text" value="" placeholder="Enter a title..." min="1">
+                    </div>
+
+                    <div class="taskForm-category">
+                        <h3 class="font-color">CATEGORY</h3>
+                        <select required>
+                            <option value="Software Development">Software Development</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Product">Product</option>
+                            <option value="Sale">Sale</option>
+                        </select>
+                    </div>
+
+                    <div class="taskForm-description">
+                        <h3 class="font-color">DESCRIPTION</h3>
+                        <textarea required placeholder="Enter a task..."  min="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="taskForm-right">
+                    <div class="taskForm-date">
+                        <h3 class="font-color">DUE DATE</h3>
+                        <input required id="date" type="date">
+                    </div>
+
+                    <div class="taskForm-urgency">
+                        <h3 class="font-color">URGENCY</h3>
+                        <select required>
+                           <option value="High">High</option> 
+                           <option value="Medium">Medium</option>
+                           <option value="Low">Low</option>
+                        </select>
+                    </div>
+
+                    <div class="taskForm-assigned">
+                        <h3 class="font-color">ASSIGNED TO</h3>
+                        <div class="taskForm-account">
+                            <img class="opacity" src="../img/person.png">
+                            <img class="opacity" src="../img/person.png">
+                            <img class="plus-img" src="../img/plus.png">
+                        </div>
+                        <div class="taskForm-buttons">
+                            <button>CANCEL</button>
+                            <button>CREATE TASK</button>
+
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
 
-<!-- Load Navigationsbar -->
-<script src="../js/include.js"></script>
+    <!-- Load Navigationsbar -->
+    <script src="../js/include.js"></script>
 </body>
+
 </html>
