@@ -1,3 +1,8 @@
+/* ====== BOARD ====== */
+body {
+    font-family: sans-serif;
+}
+
 .board {
     display: flex;
     justify-content: center;
@@ -22,7 +27,6 @@
     text-align: center;
     font-size: 24px;
     font-weight: 600;
-    
 }
 
 .boardContent {
@@ -31,4 +35,79 @@
     border: 1px solid black;
     border-radius: 4px;
     background-color: #ffffff;
+}
+
+/* ====== BACKLOG ====== */
+
+.backlog {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 248px);
+    height: 100vh;
+    margin-left: auto;
+    margin-right: 24px;
+}
+
+.backlogHeadline {
+    margin-bottom: 60px;
+}
+
+.backlogHeadline span {
+    color: #1e3190;
+}
+
+.backlogContainerHeadline {
+    color: #1e3190;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+}
+
+.backlogContainerHeadline span:nth-of-type(1) {
+    width: calc((100% / 6) * 2);
+}
+
+.backlogContainerHeadline span:nth-of-type(2), .marketing {
+    width: calc((100% / 6));
+    text-align: center;
+}
+
+.backlogContainerHeadline span:nth-of-type(3) {
+    width: calc((100% / 6) * 3);
+    text-align: end;
+}
+
+.backlogContent {
+    background-color: #766b8f70;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    margin-top: 12px;
+}
+
+.assignedTo {
+    display: flex;
+    width: calc((100% / 6) * 2);
+    align-items: center;
+}
+
+.categoryBgColor {
+    width: 12px;
+    height: 60px;
+    background-color: orange;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    margin-right: 12px;
+}
+
+.assignedToProfile {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.details {
+    width: calc((100% / 6) * 3);
 }
