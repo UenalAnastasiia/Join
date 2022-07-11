@@ -320,14 +320,44 @@ button:last-child {
 
 button:first-child:hover {
     color: white;
-    border: 1px solid white;
+    border: 3px solid rgb(145, 47, 47);
     background: #391e7af7;
     cursor: pointer;
 }
 
 button:last-child:hover {
     color: white;
-    border: 1px solid #391e7af7;
+    border: 3px solid rgb(145, 47, 47);
     background: #ffffff00;
     cursor: pointer;
+}
+
+/* ====== IMPRESSUM ====== */
+
+.impressumContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+}
+
+.impressumContainer span {
+    color: #1e3190;
+}
+
+.impressumHeader {
+    margin-left: 42px;
+    margin-top: 32px;
+}
+
+.impressumHeader h2 {
+    margin-bottom: 6px;
+}
+
+.impressum {
+    margin-left: 42px;
+    margin-top: 24px;
+}
+
+.impressum h4 {
+    margin-bottom: 0;
 }
