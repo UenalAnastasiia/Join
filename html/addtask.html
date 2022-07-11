@@ -33,17 +33,28 @@
 
                     <div class="taskForm-category">
                         <h3 class="font-color">CATEGORY</h3>
-                        <select required>
-                            <option value="Software Development">Software Development</option>
-                            <option value="Marketing">Marketing</option>
-                            <option value="Product">Product</option>
-                            <option value="Sale">Sale</option>
-                        </select>
+                        <div class="list-choice">
+                            <div required class="list-choice-title">Choose a category...</div>
+                            <div class="list-choice-objects">
+                                <label>
+                                    <input type="radio"/> <span>Software Development</span>
+                                </label>
+                                <label>
+                                    <input type="radio"/> <span>Marketing</span>
+                                </label>
+                                <label>
+                                    <input type="radio"/> <span>Product</span>
+                                </label>
+                                <label>
+                                    <input type="radio"/> <span>Sale</span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="taskForm-description">
                         <h3 class="font-color">DESCRIPTION</h3>
-                        <textarea required placeholder="Enter a task..."  min="3"></textarea>
+                        <textarea required placeholder="Enter a task..." min="3"></textarea>
                     </div>
                 </div>
 
@@ -55,11 +66,21 @@
 
                     <div class="taskForm-urgency">
                         <h3 class="font-color">URGENCY</h3>
-                        <select required>
-                           <option value="High">High</option> 
-                           <option value="Medium">Medium</option>
-                           <option value="Low">Low</option>
-                        </select>
+                        <div class="list-choice">
+                            <div required class="list-choice-title">Choose a urgency...</div>
+                            <div class="list-choice-objects">
+                                <label>
+                                    <input type="radio"/> <span>High</span>
+                                </label>
+                                <label>
+                                    <input type="radio"/> <span>Medium</span>
+                                </label>
+                                <label>
+                                    <input type="radio"/> <span>Low</span>
+                                </label>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div class="taskForm-assigned">

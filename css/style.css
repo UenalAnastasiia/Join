@@ -34,6 +34,13 @@ body {
     outline-offset: -10px;
 }
 
+.nav-logo img {
+    -webkit-box-reflect: below 5px 
+    linear-gradient(to bottom, 
+    rgba(0,0,0,0.0), 
+    rgba(0,0,0,0.6));
+}
+
 .header-navbar-links, .header-footer-links {
     display: flex;
     flex-direction: column;
@@ -252,10 +259,6 @@ form {
     padding-right: 10px;
 }
 
-select {
-    width: 420px;
-}
-
 .taskForm-description textarea {
     height: 200px;
     width: 400px;
@@ -328,7 +331,93 @@ button:last-child:hover {
     cursor: pointer;
 }
 
-/* ====== IMPRESSUM ====== */
+/* CATEGORY */
+.list-choice {
+    font-size: 18px;
+    width: 420px;
+    height: 40px;
+    position: relative;
+    cursor: pointer; 
+    border-radius: 15px; 
+  }
+
+  .list-choice input[type="radio"] {
+    position:absolute;
+    left:-9999px;
+  }
+  
+  .list-choice-title {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    background: white;
+    text-align: center;
+    padding: 0.55em 1em;
+    box-sizing: border-box;
+    color: rgb(141, 137, 137);
+    text-shadow: 0 1px 0 #CACACA;
+    border-radius: 15px;
+    box-shadow: -2px 0px 6px 0px rgb(0 0 0 / 20%);
+  }
+
+  .list-choice:hover .list-choice-title {
+    border-radius:0.2em 0.2em 0 0;
+  }
+
+  .list-choice-objects label:nth-last-of-type(1) span {
+    border-radius:0 0 0.2em 0.2em;
+  }
+  .list-choice input[type="radio"] + span {
+    color: black;
+    background: white;
+    padding: 0.55em 1em;
+    display: flex;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .list-choice-objects {
+    position: absolute;
+    top: 0;
+    padding-top: 2.1em;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: all 250ms ease;
+  }
+
+  .list-choice:hover .list-choice-objects  input[type="radio"] + span {
+    position: relative;
+    top: 0;
+    transition: all 250ms ease-in-out;
+  }
+
+  .list-choice:hover input[type="radio"] + span:hover {
+    background:#766b8f;
+  }
+
+  .list-choice input[type="radio"]:checked + span {
+    position: absolute;
+    top: 0em;
+    border-radius: 15px;
+  }
+
+  .list-choice:hover input[type="radio"]:checked + span {
+    border-radius: 0;
+  }
+
+  .list-choice:hover .list-choice-objects label:nth-last-of-type(1) input[type="radio"]:checked + span{
+    border-radius:0 0 0.2em 0.2em;
+  }
+  
+  .list-choice:hover .list-choice-objects {
+    max-height: 540px;
+  }
+
+  /* ====== IMPRESSUM ====== */
 
 .impressumContainer {
     display: flex;
