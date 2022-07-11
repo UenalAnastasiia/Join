@@ -1,8 +1,4 @@
 /* ====== BOARD ====== */
-body {
-    font-family: sans-serif;
-}
-
 .board {
     display: flex;
     justify-content: center;

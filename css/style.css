@@ -1,6 +1,7 @@
 body {
     margin: 0;
     background-image: url('../img/background-home.jpg');
+    font-family: 'PT Sans', sans-serif;
 }
 
 .font-color {
@@ -46,7 +47,7 @@ body {
 
 .header-navbar-links a {
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 24px;
     font-weight: bold;
     padding-left: 14px;
