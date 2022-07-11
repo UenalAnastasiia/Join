@@ -6,7 +6,6 @@ setURL('https://gruppe-276.developerakademie.net/smallest_backend_ever');
 
 async function init() {
     loadNavBar();
-    loadDate()
     await downloadFromServer();
     users = JSON.parse(backend.getItem('users')) || [];
 }
@@ -19,13 +18,4 @@ async function deleteUser(name) {
 async function addUser() {
     users.push('John');
     await backend.setItem('users', JSON.stringify(users));
-}
-
-
-/* 
- * Load the calendar in Add-Task-Form with min date current day 
- */
-function loadDate() {
-        let currentDay = new Date().toISOString().split('T')[0];
-        document.getElementById('date').setAttribute('min', currentDay);
 }
