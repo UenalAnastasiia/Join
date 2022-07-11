@@ -1,6 +1,7 @@
 body {
     margin: 0;
     background-image: url('../img/background-home.jpg');
+    font-family: 'PT Sans', sans-serif;
 }
 
 .font-color {
@@ -16,7 +17,8 @@ body {
     cursor: pointer;
 }
 
-/* Style navbar.html */
+/* ====== NAVBAR ====== */
+
 .header-navbar {
     height: 100vh;
     width: 200px;
@@ -32,6 +34,13 @@ body {
     outline-offset: -10px;
 }
 
+.nav-logo img {
+    -webkit-box-reflect: below 5px 
+    linear-gradient(to bottom, 
+    rgba(0,0,0,0.0), 
+    rgba(0,0,0,0.6));
+}
+
 .header-navbar-links, .header-footer-links {
     display: flex;
     flex-direction: column;
@@ -45,7 +54,7 @@ body {
 
 .header-navbar-links a {
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 24px;
     font-weight: bold;
     padding-left: 14px;
@@ -73,9 +82,9 @@ body {
     padding-top: 4px;
     padding-bottom: 4px
 }
-/* End Style navbar.html */
-/* ##################################################### */
-/* Style Main Page */
+
+/* ====== MAIN PAGE ====== */
+
 .joinMain {
     display: flex;
     flex-direction: column;
@@ -96,7 +105,7 @@ body {
 }
 
 .join-name {
-    margin-top: 24px;
+    margin-top: 36px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -175,13 +184,265 @@ body {
 .join-bg-help {
     background-image: url('../img/section-help.jpg');
 }
-/* End Style Main Page */
-/* ##################################################### */
-/* Style addtask.html */
+
+/* ====== ADD TASK ====== */
+
 .addtaskContainer {
     display: flex;
     flex-direction: column;
     margin-left: 200px;
 }
-/* End Style addtask.html */
-/* ##################################################### */
+
+.addtaskHeader {
+    margin-left: 42px;
+    margin-top: 32px;
+}
+
+.taskForm {
+    background-color: #766b8f4f;
+    box-shadow: -2px 0px 6px 0px rgb(0 0 0 / 20%);
+    margin-right: 200px;
+    margin-left: 200px;
+    margin-top: 50px;
+    border-radius: 15px;
+    outline: 2px solid rgb(255 255 255 / 38%);
+    outline-offset: -10px;
+}
+
+form {
+    margin-bottom: 36px;
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.taskForm h3 {
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+.addtaskContainer h2 {
+    margin-bottom: 6px;
+}
+
+.addtaskContainer span {
+    color: #1e3190;
+}
+
+.taskForm-left textarea {
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    resize: none;
+    outline: none;
+    border: solid 1px rgb(210, 210, 212);
+}
+
+.taskForm h3 {
+    padding-left: 10px;
+}
+
+.taskForm input, select {
+    font-size: 18px;
+    height: 40px;
+    width: 400px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    box-shadow: -2px 0px 6px 0px rgb(0 0 0 / 20%);
+    padding-left: 10px;
+}
+
+.taskForm input {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.taskForm-description textarea {
+    height: 200px;
+    width: 400px;
+    border-radius: 15px;
+    box-shadow: -2px 0px 6px 0px rgb(0 0 0 / 20%);
+    padding-left: 10px;
+}
+
+.taskForm-account {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.taskForm-account img {
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    border: 1px solid white;
+    margin-right: 12px;
+}
+
+.plus-img {
+    height: 20px !important;
+    width: 20px !important;
+    padding: 6px;
+}
+
+.plus-img:hover {
+    background: white;
+    border: 1px solid #391e7af7;
+    cursor: pointer;
+}
+
+.taskForm-buttons {
+    margin-top: 60px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+button {
+    background-color: #ffffff00;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid white;
+    color: white;
+    font-size: 18px;
+    margin-right: 24px;
+}
+
+button:last-child {
+    background-color: #391e7af7;
+}
+
+.opacity:hover {
+    opacity: 0.7;
+    border: 1px solid #391e7af7;
+    cursor: pointer;
+}
+
+button:first-child:hover {
+    border: 1px solid white;
+    background: rgb(145, 47, 47);
+    cursor: pointer;
+}
+
+button:last-child:hover {
+    border: 1px solid white;
+    background: rgb(145, 47, 47);
+    cursor: pointer;
+}
+
+/* CATEGORY */
+.list-choice {
+    font-size: 18px;
+    width: 420px;
+    height: 40px;
+    position: relative;
+    cursor: pointer; 
+    border-radius: 15px; 
+  }
+
+  .list-choice input[type="radio"] {
+    position:absolute;
+    left:-9999px;
+  }
+  
+  .list-choice-title {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    background: white;
+    text-align: center;
+    padding: 0.55em 1em;
+    box-sizing: border-box;
+    color: rgb(141, 137, 137);
+    text-shadow: 0 1px 0 #CACACA;
+    border-radius: 15px;
+    box-shadow: -2px 0px 6px 0px rgb(0 0 0 / 20%);
+  }
+
+  .list-choice:hover .list-choice-title {
+    border-radius:0.2em 0.2em 0 0;
+  }
+
+  .list-choice-objects label:nth-last-of-type(1) span {
+    border-radius:0 0 0.2em 0.2em;
+  }
+  .list-choice input[type="radio"] + span {
+    color: black;
+    background: white;
+    padding: 0.55em 1em;
+    display: flex;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .list-choice-objects {
+    position: absolute;
+    top: 0;
+    padding-top: 2.1em;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: all 250ms ease;
+  }
+
+  .list-choice:hover .list-choice-objects  input[type="radio"] + span {
+    position: relative;
+    top: 0;
+    transition: all 250ms ease-in-out;
+  }
+
+  .list-choice:hover input[type="radio"] + span:hover {
+    background:#766b8f;
+  }
+
+  .list-choice input[type="radio"]:checked + span {
+    position: absolute;
+    top: 0em;
+    border-radius: 15px;
+  }
+
+  .list-choice:hover input[type="radio"]:checked + span {
+    border-radius: 0;
+  }
+
+  .list-choice:hover .list-choice-objects label:nth-last-of-type(1) input[type="radio"]:checked + span{
+    border-radius:0 0 0.2em 0.2em;
+  }
+  
+  .list-choice:hover .list-choice-objects {
+    max-height: 540px;
+  }
+
+  /* ====== IMPRESSUM ====== */
+
+.impressumContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+}
+
+.impressumContainer span {
+    color: #1e3190;
+}
+
+.impressumHeader {
+    margin-left: 42px;
+    margin-top: 32px;
+}
+
+.impressumHeader h2 {
+    margin-bottom: 6px;
+}
+
+.impressum {
+    margin-left: 42px;
+    margin-top: 24px;
+}
+
+.impressum h4 {
+    margin-bottom: 0;
+}

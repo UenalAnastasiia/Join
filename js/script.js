@@ -10,6 +10,7 @@ async function init() {
     users = JSON.parse(backend.getItem('users')) || [];
 }
 
+
 async function deleteUser(name) {
     await backend.deleteItem('users');
 }
