@@ -10,6 +10,7 @@
     <script src="../js/mini_backend.js"></script>
     <script src="../js/script.js"></script>
     <script src="../js/backlog.js"></script>
+    <script src="../template/backlogTemplate.js"></script>
     <!-- Libraries Style -->
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -20,7 +21,7 @@
 <body onload="init()">
     <div w3-include-html="../html/navbar.html"></div>
 
-    <div class="backlog">
+    <div id="backlog" class="backlog">
         <div class="backlogHeadline">
             <h2>Backlog</h2>
             <span>Learning Management System Project</span>
@@ -46,8 +47,8 @@
                     <div class="marketing">
                         <span>Marketing</span>
                     </div>
-                    <div class="details">
-                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quidem minus repudiandae doloremque id itaque. Dolores consequatur non, veniam optio repellendus quae fugiat, aliquam suscipit veritatis modi dignissimos saepe placeat quidem vero qui harum doloremque laborum. Nam quo consequuntur modi quis accusantium, ipsa fugit quod est eligendi odit! Id esse inventore in itaque repudiandae sint, numquam fuga porro libero sequi iure, animi voluptatem ducimus cumque aperiam quae quas possimus. A delectus ad commodi sapiente praesentium? Dignissimos culpa dolorum vel blanditiis repellat nulla amet. Nulla eligendi mollitia dignissimos? Excepturi consequatur tempora doloremque voluptatibus provident, est quasi nobis soluta aliquid consequuntur. Laborum?</span>
+                    <div onclick="openDetails()" class="details">
+                        <span id="details">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quidem minus repudiandae doloremque id itaque. Dolores consequatur non, veniam optio repellendus quae fugiat, aliquam suscipit veritatis modi dignissimos saepe placeat quidem vero qui harum doloremque laborum. Nam quo consequuntur modi quis accusantium, ipsa fugit quod est eligendi odit! Id esse inventore in itaque repudiandae sint, numquam fuga porro libero sequi iure, animi voluptatem ducimus cumque aperiam quae quas possimus. A delectus ad commodi sapiente praesentium? Dignissimos culpa dolorum vel blanditiis repellat nulla amet. Nulla eligendi mollitia dignissimos? Excepturi consequatur tempora doloremque voluptatibus provident, est quasi nobis soluta aliquid consequuntur. Laborum?</span>
                     </div>
                 </div>
             </div>
