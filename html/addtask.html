@@ -25,29 +25,29 @@
         </div>
 
         <div class="taskForm">
-            <form> <!-- onsubmit=" event.preventDefault(), createTask()" -->
+            <form onsubmit=" event.preventDefault(), createTask()"> <!-- onsubmit=" event.preventDefault(), createTask()" -->
                 <div class="taskForm-left">
                     <div class="taskForm-title">
                         <h3 class="font-color">TITLE</h3>
-                        <input required type="text" value="" placeholder="Enter a title..." minlength="3">
+                        <input required id="taskTitle" type="text" value="" placeholder="Enter a title..." minlength="3">
                     </div>
 
                     <div class="taskForm-category">
                         <h3 class="font-color">CATEGORY</h3>
                         <div class="list-choice">
-                            <div class="list-choice-title">Choose a category...</div>
+                            <div id="taskCategory" class="list-choice-title">Choose a category...</div>
                             <div required class="list-choice-objects">
                                 <label>
-                                    <input type="radio"/> <span>Software Development</span>
+                                    <input value="Software Development" type="radio"/> <span>Software Development</span>
                                 </label>
                                 <label>
-                                    <input type="radio"/> <span>Marketing</span>
+                                    <input value="Marketing" type="radio"/> <span>Marketing</span>
                                 </label>
                                 <label>
-                                    <input type="radio"/> <span>Product</span>
+                                    <input value="Product" type="radio"/> <span>Product</span>
                                 </label>
                                 <label>
-                                    <input type="radio"/> <span>Sale</span>
+                                    <input value="Sale" type="radio"/> <span>Sale</span>
                                 </label>
                             </div>
                         </div>
@@ -55,20 +55,20 @@
 
                     <div class="taskForm-description">
                         <h3 class="font-color">DESCRIPTION</h3>
-                        <textarea required placeholder="Enter a task..." minlength="3"></textarea>
+                        <textarea required  id="taskDescription" placeholder="Enter a task..." minlength="3"></textarea>
                     </div>
                 </div>
 
                 <div class="taskForm-right">
                     <div class="taskForm-date">
                         <h3 class="font-color">DUE DATE</h3>
-                        <input required id="date" type="date">
+                        <input required id="taskDate" type="date">
                     </div>
 
                     <div class="taskForm-urgency">
                         <h3 class="font-color">URGENCY</h3>
                         <div class="list-choice">
-                            <div required class="list-choice-title">Choose a urgency...</div>
+                            <div required id="taskUrgency" class="list-choice-title">Choose a urgency...</div>
                             <div required class="list-choice-objects">
                                 <label>
                                     <input type="radio"/> <span>High</span>
@@ -86,7 +86,7 @@
 
                     <div class="taskForm-assigned">
                         <h3 class="font-color">ASSIGNED TO</h3>
-                        <div required class="taskForm-account">
+                        <div required  id="taskAssignedAccount"class="taskForm-account">
                             <img class="opacity" src="../img/person.png">
                             <img class="opacity" src="../img/person.png">
                             <img class="plus-img" src="../img/plus.png">
