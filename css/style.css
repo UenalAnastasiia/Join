@@ -22,7 +22,7 @@ body {
 .header-navbar {
     height: 100vh;
     width: 200px;
-    position: absolute;
+    position: fixed;
     background-color: #766b8f70;
     top: 0;
     left: 0;
