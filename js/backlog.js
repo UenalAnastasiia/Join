@@ -1,10 +1,12 @@
 "use strict"
 
 function openDetails() {
-    let details = document.getElementById('details').innerText;
-    document.body.innerHTML += openDetailsHTML(details);
+    document.body.innerHTML += openDetailsHTML();
+    let showDetails = document.getElementById('backlogDetailsContainer');
+    showDetails.classList.remove('d-none');
 }
 
 function closeDetails() {
-    document.getElementById('backlogDetailsContainer').classList.add = 'd-none';
+    let showDetails = document.getElementById('backlogDetailsContainer');
+    showDetails.classList.add('d-none');
 }
