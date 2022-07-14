@@ -56,10 +56,16 @@ function generateNewTask(title, category, description, date, urgency, assignedAc
 
 
 function openTaskAccounts() {
+    document.getElementById('taskAccountsContainer').classList.remove('d-none');
     for (let i = 0; i < taskAccounts.length; i++) {
         let taskAccount = taskAccounts[i];
         document.getElementById('taskAccount').innerHTML += generateHTMLTaskAccounts(taskAccount);    
     }
+}
+
+
+function closeTaskAccounts() {
+    document.getElementById('taskAccountsContainer').classList.add('d-none');
 }
 
 

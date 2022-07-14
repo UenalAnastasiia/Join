@@ -93,7 +93,17 @@
                     <div class="taskForm-assigned">
                         <h3 class="font-color">ASSIGNED TO</h3>
                         <div onclick="openTaskAccounts()" required id="taskAssignedAccount" class="taskForm-account">
-                            <div id="taskAccount"></div>
+                            <!-- <div id="taskAccount"></div> -->
+                            <div id="taskAccountsContainer" class="taskAccountsContainer d-none">
+                                <div class="taskAccountsWindow">
+                                    <div onclick="closeTaskAccounts()" class="close-taskAccounts-box">
+                                        <img class="backlogBackIcon" src="../img/back.png">
+                                    </div>
+                                    <div id="taskAccount" class="taskAccountsList">
+
+                                    </div>
+                                </div>
+                            </div>
                             <img class="plus-img" src="../img/plus.png">
                         </div>
                         <div class="taskForm-buttons">

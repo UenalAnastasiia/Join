@@ -87,6 +87,37 @@ body {
     padding-bottom: 4px
 }
 
+
+  /* ====== IMPRESSUM ====== */
+
+  .impressumContainer {
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+}
+
+.impressumContainer span {
+    color: #1e3190;
+}
+
+.impressumHeader {
+    margin-left: 42px;
+    margin-top: 32px;
+}
+
+.impressumHeader h2 {
+    margin-bottom: 6px;
+}
+
+.impressum {
+    margin-left: 42px;
+    margin-top: 24px;
+}
+
+.impressum h4 {
+    margin-bottom: 0;
+}
+
 /* ====== MAIN PAGE ====== */
 
 .joinMain {
@@ -278,18 +309,13 @@ form {
     padding-left: 10px;
 }
 
-.taskForm-account img {
-    height: 60px;
-    width: 60px;
-    border-radius: 100%;
-    border: 1px solid white;
-    margin-right: 12px;
-}
-
 .plus-img {
     height: 20px !important;
     width: 20px !important;
     padding: 6px;
+    border-radius: 100%;
+    border: 1px solid white;
+    margin-right: 12px;
 }
 
 .plus-img:hover {
@@ -422,43 +448,15 @@ button:last-child:hover {
     max-height: 540px;
   }
 
-  /* ====== IMPRESSUM ====== */
 
-.impressumContainer {
-    display: flex;
-    flex-direction: column;
-    margin-left: 200px;
-}
-
-.impressumContainer span {
-    color: #1e3190;
-}
-
-.impressumHeader {
-    margin-left: 42px;
-    margin-top: 32px;
-}
-
-.impressumHeader h2 {
-    margin-bottom: 6px;
-}
-
-.impressum {
-    margin-left: 42px;
-    margin-top: 24px;
-}
-
-.impressum h4 {
-    margin-bottom: 0;
-}
-
-/* taskTemplate.js */
+/* ====== taskTemplate.js ====== */
 .taskAccountsContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
     top: 0;
+    left: 0;
     height: 100vh;
     width: 100vw;
     background-color: rgba(255, 255, 255, 0.5);
@@ -482,14 +480,14 @@ button:last-child:hover {
     flex-direction: column;
 }
 
-.taskAccountManImg img, .taskAccountWomanImg img {
+.taskAccountImg img {
     width: 60px;
     height: 60px;
     object-fit: cover;
     border-radius: 100%;
 }
 
-.taskAccountMan, .taskAccountWoman {
+.taskAccount {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -497,8 +495,12 @@ button:last-child:hover {
     margin-top: 12px;
 }
 
-.taskAccountManInfo, .taskAccountWomanInfo {
+.taskAccountInfo {
     display: flex;
     flex-direction: column;
     min-width: 200px;
+}
+
+.taskAccountJob {
+    min-width: 150px;
 }
