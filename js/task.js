@@ -65,7 +65,7 @@ function openTaskAccounts() {
 
 
 function closeTaskAccounts() {
-    document.getElementById('taskAccountsContainer').classList.add('d-none');
+    document.getElementById('taskAccountsContainer').style.display = 'none';
 }
 
 
