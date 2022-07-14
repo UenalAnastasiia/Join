@@ -10,9 +10,12 @@
     <script src="../js/mini_backend.js"></script>
     <script src="../js/script.js"></script>
     <script src="../js/task.js"></script>
+    <script src="../template/taskTemplate.js"></script>
+    <script src="../js/backlog.js"></script>
     <!-- Libraries Style -->
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/leonstyle.css">
     <link rel="shortcut icon" href="../img/joinlogo.png" type="image/x-icon">
 </head>
 
@@ -89,15 +92,13 @@
 
                     <div class="taskForm-assigned">
                         <h3 class="font-color">ASSIGNED TO</h3>
-                        <div required id="taskAssignedAccount" class="taskForm-account">
-                            <img class="opacity" src="../img/person.png">
-                            <img class="opacity" src="../img/person.png">
+                        <div onclick="openTaskAccounts()" required id="taskAssignedAccount" class="taskForm-account">
+                            <div id="taskAccount"></div>
                             <img class="plus-img" src="../img/plus.png">
                         </div>
                         <div class="taskForm-buttons">
                             <button type="reset">CANCEL</button>
                             <button type="submit">CREATE TASK</button>
-
                         </div>
                     </div>
                 </div>
