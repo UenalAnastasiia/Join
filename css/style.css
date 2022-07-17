@@ -278,7 +278,7 @@ form {
     padding-left: 10px;
 }
 
-.taskForm input, select {
+.input-taskform, select {
     font-size: 18px;
     height: 40px;
     width: 400px;
@@ -289,7 +289,7 @@ form {
     padding-left: 10px;
 }
 
-.taskForm input {
+.input-taskform {
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -500,6 +500,7 @@ button:last-child:hover {
     height: 60px;
     object-fit: cover;
     border-radius: 100%;
+    border: 1px solid white;
 }
 
 .taskAccount {
@@ -523,6 +524,7 @@ button:last-child:hover {
 .taskAccountInfo {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     min-width: 200px;
 }
 
@@ -532,4 +534,23 @@ button:last-child:hover {
 
 .taskAccountJob {
     min-width: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.taskAccount label {
+    display: flex;
+}
+
+.margin-50 {
+    margin-right: 50px;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.taskAccount input[type="checkbox"] {
+    height: 30px;
+    width: 30px;
 }

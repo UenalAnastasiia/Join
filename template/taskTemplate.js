@@ -1,16 +1,19 @@
-function generateHTMLTaskAccounts(taskAccount) {
+function generateHTMLassignedAccounts(taskAccount) {
     return  /*html*/ `
-        <div class="taskAccount">
-            <div class="taskAccountImg">
-                <img src="${taskAccount['image']}">
-            </div>
-            <div class="taskAccountInfo">
-                <span>${taskAccount['name']}</span>
-                <span>${taskAccount['e-mail']}</span>
-            </div>
-            <div class="taskAccountJob">
-                <span>${taskAccount['job']}</span>
-            </div>
+        <div id="taskAssignedAccount" class="taskAccount">
+            <input onchange="taskAccountCheckboxAlert(this)" class="cursor" type="checkbox" name="taskAccount" value="taskAccount" id="taskAccount"> 
+            <label for="taskAccount">
+                <div class="taskAccountImg margin-50 cursor">
+                    <img src="${taskAccount['image']}">
+                </div>
+                    <div class="taskAccountInfo margin-50 cursor">
+                        <span>${taskAccount['name']}</span>
+                        <span>${taskAccount['e-mail']}</span>
+                    </div>
+                    <div class="taskAccountJob cursor">
+                        <span>${taskAccount['job']}</span>
+                    </div>
+            </label>
         </div>
     `;
 }

@@ -33,7 +33,7 @@
                 <div class="taskForm-left">
                     <div class="taskForm-title">
                         <h3 class="font-color">TITLE</h3>
-                        <input required id="taskTitle" type="text" value="" placeholder="Enter a title..."
+                        <input class="input-taskform" required id="taskTitle" type="text" value="" placeholder="Enter a title..."
                             minlength="3">
                     </div>
 
@@ -43,17 +43,20 @@
                             <div id="taskCategory" class="list-choice-title">Choose a category...</div>
                             <div required class="list-choice-objects">
                                 <label>
-                                    <input class="taskCategory" value="Software Development" type="radio" /> <span>Software
-                                        Development</span>
+                                    <input class="taskCategory" value="Software Development" type="radio" />
+                                    <span>Software Development</span>
                                 </label>
                                 <label>
-                                    <input class="taskCategory" value="Marketing" type="radio" /> <span>Marketing</span>
+                                    <input class="taskCategory input-taskform" value="Marketing" type="radio" />
+                                    <span>Marketing</span>
                                 </label>
                                 <label>
-                                    <input class="taskCategory" value="Product" type="radio" /> <span>Product</span>
+                                    <input class="taskCategory input-taskform" value="Product" type="radio" />
+                                    <span>Product</span>
                                 </label>
                                 <label>
-                                    <input class="taskCategory" value="Sale" type="radio" /> <span>Sale</span>
+                                    <input class="taskCategory input-taskform" value="Sale" type="radio" />
+                                    <span>Sale</span>
                                 </label>
                             </div>
                         </div>
@@ -68,22 +71,25 @@
                 <div class="taskForm-right">
                     <div class="taskForm-date">
                         <h3 class="font-color">DUE DATE</h3>
-                        <input required id="taskDate" type="date">
+                        <input class="input-taskform" required id="taskDate" type="date">
                     </div>
 
                     <div class="taskForm-urgency">
                         <h3 class="font-color">URGENCY</h3>
                         <div class="list-choice">
-                            <div required class="list-choice-title">Choose a urgency...</div>
-                            <div id="taskUrgency" required class="list-choice-objects">
+                            <div class="list-choice-title">Choose a urgency...</div>
+                            <div id="taskUrgency" class="list-choice-objects">
                                 <label>
-                                    <input class="taskUrgency" value="High" type="radio" /> <span>High</span>
+                                    <input class="taskUrgency input-taskform" value="High" type="radio" />
+                                    <span>High</span>
                                 </label>
                                 <label>
-                                    <input class="taskUrgency" value="Medium" type="radio" /> <span>Medium</span>
+                                    <input class="taskUrgency input-taskform" value="Medium" type="radio" />
+                                    <span> Medium</span>
                                 </label>
                                 <label>
-                                    <input class="taskUrgency" value="Low" type="radio" /> <span>Low</span>
+                                    <input class="taskUrgency input-taskform" value="Low" type="radio" />
+                                    <span> Low</span>
                                 </label>
                             </div>
                         </div>
@@ -92,18 +98,18 @@
 
                     <div class="taskForm-assigned">
                         <h3 class="font-color">ASSIGNED TO</h3>
-                        <div onclick="openTaskAccounts()" required id="taskAssignedAccount" class="taskForm-account">
+                        <div class="taskForm-account">
                             <!-- <div id="taskAccount"></div> -->
                             <div id="taskAccountsContainer" class="taskAccountsContainer d-none">
                                 <div class="taskAccountsWindow">
-                                    <div onclick="closeTaskAccounts()" class="close-taskAccounts-box">
+                                    <div onclick="closeAssignedAccounts()" class="close-taskAccounts-box">
                                         <img class="backIcon" src="../img/back.png">
                                     </div>
                                     <div id="taskAccount" class="taskAccountsList">
                                     </div>
                                 </div>
                             </div>
-                            <img class="plus-img" src="../img/plus.png">
+                            <img onclick="openAssignedAccounts()" class="plus-img" src="../img/plus.png">
                         </div>
                         <div class="taskForm-buttons">
                             <button type="reset">CANCEL</button>
