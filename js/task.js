@@ -1,5 +1,8 @@
 let allTasks = [];
 let taskAssignedAccounts = [];
+let worker;
+let taskCategory;
+let taskUrgency;
 let taskAccounts = [
     {
         'image': '../img/profile.jpg',
@@ -34,24 +37,26 @@ function loadDate() {
  * Generate a new Task with Date from the Task-Form and push the task in JSON-Array
  */
 function createTask() {
-    let title = document.getElementById('taskTitle').value;
-    let category = document.querySelector('.taskCategory').value;
-    let description = document.getElementById('taskDescription').value;
-    let date = document.getElementById('taskDate').value;
-    let urgency = document.querySelector('.taskUrgency').value;
-    /* let assignedAccount = document.getElementById('taskAssignedAccount').value; */
-    generateNewTask(title, category, description, date, urgency, /* assignedAccount */);
+    if (taskAssignedAccounts.length == 0) {
+        let title = document.getElementById('taskTitle').value;
+        let category = taskCategory || '';
+        let description = document.getElementById('taskDescription').value;
+        let date = document.getElementById('taskDate').value;
+        let urgency = taskUrgency || ''
+        let assignedAccount = worker || '';
+        generateNewTask(title, category, description, date, urgency, assignedAccount);
+    } /* else {chooseAccount(); } */
 }
 
 
-function generateNewTask(title, category, description, date, urgency, /* assignedAccount */) {
+function generateNewTask(title, category, description, date, urgency, assignedAccount) {
     let newTask = {
         'title': title,
         'category': category,
         'description': description,
         'date': date,
         'urgency': urgency,
-        'assignedAccount': taskAssignedAccounts
+        'assignedAccount': assignedAccount
     }
     allTasks.push(newTask);
     console.log(allTasks);
@@ -59,41 +64,26 @@ function generateNewTask(title, category, description, date, urgency, /* assigne
 }
 
 
-/* 
- * Generate Task-Accounts (assigned to) and open the window with Account-Date (plus-image)
- */
-function openAssignedAccounts() {
-    document.getElementById('taskAccountsContainer').classList.remove('d-none');
-    for (let i = 0; i < taskAccounts.length; i++) {
-        let taskAccount = taskAccounts[i];
-        document.getElementById('taskAccount').innerHTML += generateHTMLassignedAccounts(taskAccount);    
-    }
+function chooseAssignedAccount(position, name) {
+    document.getElementById('worker-' + position).style.border = '1px solid red';
+    worker = name;
 }
 
 
-function closeAssignedAccounts() {
-    document.getElementById('taskAccountsContainer').style.display = 'none';
+function chooseCategory(position, name) {
+    document.getElementById('category-' + position).style.background = 'grey';
+    taskCategory = name;
 }
 
 
-/* function chooseAssignedAccount() {
-    chooseAccount = document.getElementById('taskAssignedAccount');
-    taskAssignedAccounts.push(chooseAccount);
+function chooseUrgency(position, name) {
+    document.getElementById('urgency-' + position).style.background = 'grey';
+    taskUrgency = name;
 }
- */
+
 
 function cleanTaskForm() {
     document.getElementById('taskTitle').value = '';
     document.getElementById('taskDate').value = '';
     document.getElementById('taskDescription').value = '';
 }
-
-
-/* 
- * Show alert-text when a task-account was clicked 
- */
-function taskAccountCheckboxAlert(checkboxElem) {
-    if (checkboxElem.checked) {
-      alert ("You've add an employee to the task. Click on the arrow to continue the task.");
-    }
-  }

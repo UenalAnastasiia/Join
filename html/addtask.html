@@ -29,94 +29,128 @@
 
         <div class="taskForm">
             <form onsubmit=" event.preventDefault(), createTask()">
-                <!-- onsubmit=" event.preventDefault(), createTask()" -->
+                    <!-- Title -->
                 <div class="taskForm-left">
                     <div class="taskForm-title">
                         <h3 class="font-color">TITLE</h3>
-                        <input class="input-taskform" required id="taskTitle" type="text" value="" placeholder="Enter a title..."
-                            minlength="3">
+                        <input class="input-taskform" required id="taskTitle" type="text" value=""
+                            placeholder="Enter a title..." minlength="3">
                     </div>
-
+                    <!-- Category -->
                     <div class="taskForm-category">
                         <h3 class="font-color">CATEGORY</h3>
                         <div class="list-choice">
                             <div id="taskCategory" class="list-choice-title">Choose a category...</div>
                             <div required class="list-choice-objects">
                                 <label>
-                                    <input class="taskCategory" value="Software Development" type="radio" />
+                                    <input class="taskCategory" value="Software Development" id="category-1"
+                                        onclick="chooseCategory(1, 'Software Development')" type="radio" />
                                     <span>Software Development</span>
                                 </label>
                                 <label>
-                                    <input class="taskCategory input-taskform" value="Marketing" type="radio" />
+                                    <input class="taskCategory input-taskform" value="Marketing" id="category-2"
+                                        onclick="chooseCategory(2, 'Marketing')" type="radio" />
                                     <span>Marketing</span>
                                 </label>
                                 <label>
-                                    <input class="taskCategory input-taskform" value="Product" type="radio" />
+                                    <input class="taskCategory input-taskform" value="Product" id="category-3"
+                                        onclick="chooseCategory(3, 'Product')" type="radio" />
                                     <span>Product</span>
                                 </label>
                                 <label>
-                                    <input class="taskCategory input-taskform" value="Sale" type="radio" />
+                                    <input class="taskCategory input-taskform" value="Sale" id="category-4"
+                                        onclick="chooseCategory(4, 'Sale')" type="radio" />
                                     <span>Sale</span>
                                 </label>
                             </div>
                         </div>
                     </div>
-
+                    <!-- Description -->
                     <div class="taskForm-description">
                         <h3 class="font-color">DESCRIPTION</h3>
                         <textarea required id="taskDescription" placeholder="Enter a task..." minlength="3"></textarea>
                     </div>
                 </div>
-
+                    <!-- Duo Date -->
                 <div class="taskForm-right">
                     <div class="taskForm-date">
                         <h3 class="font-color">DUE DATE</h3>
                         <input class="input-taskform" required id="taskDate" type="date">
                     </div>
-
+                    <!-- Urgency -->
                     <div class="taskForm-urgency">
                         <h3 class="font-color">URGENCY</h3>
                         <div class="list-choice">
                             <div class="list-choice-title">Choose a urgency...</div>
                             <div id="taskUrgency" class="list-choice-objects">
                                 <label>
-                                    <input class="taskUrgency input-taskform" value="High" type="radio" />
+                                    <input class="taskUrgency input-taskform" value="High" id="urgency-1"
+                                        onclick="chooseUrgency(1, 'High')" type="radio" />
                                     <span>High</span>
                                 </label>
                                 <label>
-                                    <input class="taskUrgency input-taskform" value="Medium" type="radio" />
+                                    <input class="taskUrgency input-taskform" value="Medium" id="urgency-2"
+                                        onclick="chooseUrgency(2, 'Medium')" type="radio" />
                                     <span> Medium</span>
                                 </label>
                                 <label>
-                                    <input class="taskUrgency input-taskform" value="Low" type="radio" />
+                                    <input class="taskUrgency input-taskform" value="Low" id="urgency-3"
+                                        onclick="chooseUrgency(3, 'Low')" type="radio" />
                                     <span> Low</span>
                                 </label>
                             </div>
                         </div>
 
                     </div>
-
+                    <!-- Assigned to -->
                     <div class="taskForm-assigned">
                         <h3 class="font-color">ASSIGNED TO</h3>
                         <div class="taskForm-account">
-                            <!-- <div id="taskAccount"></div> -->
-                            <div id="taskAccountsContainer" class="taskAccountsContainer d-none">
-                                <div class="taskAccountsWindow">
-                                    <div onclick="closeAssignedAccounts()" class="close-taskAccounts-box">
-                                        <img class="backIcon" src="../img/back.png">
-                                    </div>
-                                    <div id="taskAccount" class="taskAccountsList">
-                                    </div>
+                            <div class="taskAccount-box" id="worker-1"
+                                onclick="chooseAssignedAccount(1, 'Leon Groschek')">
+                                <div class="taskAccountImg cursor">
+                                    <img src="../img/profile.jpg">
+                                </div>
+                                <div class="cursor">
+                                    <span>Leon Groschek</span>
+                                    <br>
+                                    <br>
+                                    <span>Software Developer</span>
                                 </div>
                             </div>
-                            <img onclick="openAssignedAccounts()" class="plus-img" src="../img/plus.png">
+
+                            <div class="taskAccount-box" id="worker-2"
+                                onclick="chooseAssignedAccount(2, 'Anastasiia Ünal')">
+                                <div class="taskAccountImg cursor">
+                                    <img src="../img/Anastasiia.jpg">
+                                </div>
+                                <div class="cursor">
+                                    <span>Anastasiia Ünal</span>
+                                    <br>
+                                    <br>
+                                    <span>Software Developer</span>
+                                </div>
+                            </div>
+
+                            <div class="taskAccount-box" id="worker-1"
+                                onclick="chooseAssignedAccount(3, 'Max Mustermann')">
+                                <div class="taskAccountImg cursor">
+                                    <img src="../img/man.png">
+                                </div>
+                                <div class="cursor">
+                                    <span>Max Mustermann</span>
+                                    <br>
+                                    <br>
+                                    <span>Administrator</span>
+                                </div>
+                            </div>
                         </div>
+                    <!-- Buttons -->
                         <div class="taskForm-buttons">
                             <button type="reset">CANCEL</button>
                             <button type="submit">CREATE TASK</button>
                         </div>
                     </div>
-                </div>
             </form>
         </div>
     </div>
