@@ -25,13 +25,19 @@ let taskAccounts = [
 
 setURL('https://gruppe-276.developerakademie.net/smallest_backend_ever');
 
-// Delete all tasks from backend
-/* async function deleteUser(allTasks) {
-    await backend.deleteItem('allTasks');
-} */
+
+let allTasks = [];
 
 
-/* 
+async function init() {
+    loadNavBar();
+    await downloadFromServer();
+    allTasks = JSON.parse(backend.getItem('allTasks')) || [];
+    console.log(allTasks);
+}
+
+
+/** 
  * Load the calendar in Add-Task-Form with min date current day 
  */
 function loadDate() {
@@ -40,7 +46,7 @@ function loadDate() {
 }
 
 
-/* 
+/** 
  * Create a new Task with Date from the Task-Form and push the task in JSON-Array
  */
 function createTask() {
@@ -55,7 +61,7 @@ function createTask() {
 }
 
 
-/* 
+/** 
  * Generate a Task, push the task in JSON-Array and clean the task-form
  */
 async function generateNewTask(title, category, description, date, urgency, assignedAccount) {

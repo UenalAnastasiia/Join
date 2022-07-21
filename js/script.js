@@ -1,6 +1,6 @@
 "use strict"
 
-let allTasks = [];
+/* let allTasks = [];
 
 setURL('https://gruppe-276.developerakademie.net/smallest_backend_ever');
 
@@ -10,7 +10,7 @@ async function init() {
     allTasks = JSON.parse(backend.getItem('allTasks')) || [];
     console.log(allTasks);
 }
-
+ */
 
 async function deleteTask() {
     await backend.deleteItem('allTasks');
