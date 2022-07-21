@@ -7,10 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join - Add Task</title>
     <!-- Libraries JavaScript -->
-    <script src="../js/mini_backend.js"></script>
+    <script src="../smallest_backend_ever/mini_backend.js"></script>
     <script src="../js/script.js"></script>
     <script src="../js/task.js"></script>
-    <script src="../template/taskTemplate.js"></script>
     <script src="../js/backlog.js"></script>
     <!-- Libraries Style -->
     <link rel="stylesheet" href="../css/fonts.css">
@@ -34,7 +33,7 @@
                     <div class="taskForm-title">
                         <h3 class="font-color">TITLE</h3>
                         <input class="input-taskform" required id="taskTitle" type="text" value=""
-                            placeholder="Enter a title..." minlength="3">
+                            placeholder="Enter a title..." minlength="3" autocomplete="off">
                     </div>
                     <!-- Category -->
                     <div class="taskForm-category">
@@ -132,7 +131,7 @@
                                 </div>
                             </div>
 
-                            <div class="taskAccount-box" id="worker-1"
+                            <div class="taskAccount-box" id="worker-3"
                                 onclick="chooseAssignedAccount(3, 'Max Mustermann')">
                                 <div class="taskAccountImg cursor">
                                     <img src="../img/man.png">
@@ -147,7 +146,7 @@
                         </div>
                     <!-- Buttons -->
                         <div class="taskForm-buttons">
-                            <button type="reset">CANCEL</button>
+                            <button type="reset" onclick="cleanTaskForm()">CANCEL</button>
                             <button type="submit">CREATE TASK</button>
                         </div>
                     </div>

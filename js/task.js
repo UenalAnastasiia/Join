@@ -24,6 +24,16 @@ let taskAccounts = [
     }
 ];
 
+setURL('https://gruppe-276.developerakademie.net/smallest_backend_ever');
+
+async function init() {
+    loadNavBar();
+    await downloadFromServer();
+    allTasks = JSON.parse(backend.getItem('allTasks')) || [];
+    console.log(allTasks);
+}
+
+
 /* 
  * Load the calendar in Add-Task-Form with min date current day 
  */
@@ -37,7 +47,6 @@ function loadDate() {
  * Generate a new Task with Date from the Task-Form and push the task in JSON-Array
  */
 function createTask() {
-    if (taskAssignedAccounts.length == 0) {
         let title = document.getElementById('taskTitle').value;
         let category = taskCategory || '';
         let description = document.getElementById('taskDescription').value;
@@ -45,11 +54,12 @@ function createTask() {
         let urgency = taskUrgency || ''
         let assignedAccount = worker || '';
         generateNewTask(title, category, description, date, urgency, assignedAccount);
-    } /* else {chooseAccount(); } */
+        alert('You have create a task! You can find it in Backlog.')
 }
 
 
-function generateNewTask(title, category, description, date, urgency, assignedAccount) {
+async function generateNewTask(title, category, description, date, urgency, assignedAccount) {
+    
     let newTask = {
         'title': title,
         'category': category,
@@ -59,13 +69,13 @@ function generateNewTask(title, category, description, date, urgency, assignedAc
         'assignedAccount': assignedAccount
     }
     allTasks.push(newTask);
-    console.log(allTasks);
+    await backend.setItem('allTasks', JSON.stringify(allTasks));
     cleanTaskForm();
 }
 
 
 function chooseAssignedAccount(position, name) {
-    document.getElementById('worker-' + position).style.border = '1px solid red';
+    document.getElementById('worker-' + position).style.border = '1px solid red'; 
     worker = name;
 }
 
