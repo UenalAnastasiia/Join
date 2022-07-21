@@ -1,7 +1,4 @@
-/**
- * include navbar to all pages
- */
- async function loadNavBar() {
+async function loadNavBar() {
     await includeHTML();
 }
 

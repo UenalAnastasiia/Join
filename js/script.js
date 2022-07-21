@@ -1,21 +1,23 @@
 "use strict"
 
-let users = [];
+let allTasks = [];
 
 setURL('https://gruppe-276.developerakademie.net/smallest_backend_ever');
 
 async function init() {
     loadNavBar();
     await downloadFromServer();
-    users = JSON.parse(backend.getItem('users')) || [];
+    allTasks = JSON.parse(backend.getItem('allTasks')) || [];
+    console.log(allTasks);
 }
 
 
-async function deleteUser(name) {
-    await backend.deleteItem('users');
+async function deleteTask() {
+    await backend.deleteItem('allTasks');
 }
 
-async function addUser() {
+
+/* async function addUser() {
     users.push('John');
     await backend.setItem('users', JSON.stringify(users));
-}
+} */
