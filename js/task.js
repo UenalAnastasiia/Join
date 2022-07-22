@@ -1,33 +1,10 @@
 let taskAssignedAccounts = [];
+let allTasks = [];
 let worker;
 let taskCategory;
 let taskUrgency;
-let taskAccounts = [
-    {
-        'image': '../img/profile.jpg',
-        'name': 'Leon Groschek',
-        'e-mail': 'leon.groschek12@gmail.com',
-        'job': 'Software Developer'
-    },
-    {
-        'image': '../img/Anastasiia.jpg',
-        'name': 'Anastasiia Ünal',
-        'e-mail': 'velika908@gmail.com',
-        'job': 'Software Developer'
-    },
-    {
-        'image': '../img/man.png',
-        'name': 'Max Mustermann',
-        'e-mail': 'mustermann@gmail.com',
-        'job': 'Administrator'
-    }
-];
 
 setURL('https://gruppe-276.developerakademie.net/smallest_backend_ever');
-
-
-let allTasks = [];
-
 
 async function init() {
     loadNavBar();
@@ -105,4 +82,5 @@ function cleanTaskForm() {
     document.getElementById('worker-1').style.border = '1px solid white'; 
     document.getElementById('worker-2').style.border = '1px solid white'; 
     document.getElementById('worker-3').style.border = '1px solid white'; 
+    init();
 }
