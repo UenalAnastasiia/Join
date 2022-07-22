@@ -386,7 +386,7 @@ button:last-child {
     cursor: pointer;
 }
 
-button:first-child:hover {
+button:first-child:hover, .popUpBtn:hover {
     border: 1px solid white;
     background: rgb(145, 47, 47);
     cursor: pointer;
@@ -490,4 +490,61 @@ button:last-child:hover {
   
   .list-choice:hover .list-choice-objects {
     max-height: 540px;
+  }
+
+  /* Modal Popup Box */
+
+  #popUpBox {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(203 200 200 / 60%);
+  }
+
+  .popUpWindow {
+    width: 500px;
+    overflow: hidden;
+    background: rgb(95, 30, 156);
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  #popUpBox span {
+    color: white;
+    font-size: 40px;
+    display: block;
+    margin: 20px 0;
+  }
+  
+  #popUpBox h1 {
+    color: white;
+  }
+
+  .popUpMargin {
+    margin-right: 12px;
+  }
+  
+  .popUpBtn {
+    font-size: 18px;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: rgb(174 174 191 / 82%);
+    display: inline-block;
+    border-radius: 10px;
+    border: 1px solid white;
+    text-decoration: none;
+    width: 180px;
   }

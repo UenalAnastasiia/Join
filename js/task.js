@@ -3,6 +3,7 @@ let allTasks = [];
 let worker;
 let taskCategory;
 let taskUrgency;
+let modal = false;
 
 setURL('https://gruppe-276.developerakademie.net/smallest_backend_ever');
 
@@ -27,14 +28,13 @@ function loadDate() {
  * Create a new Task with Date from the Task-Form and push the task in JSON-Array
  */
 function createTask() {
-        let title = document.getElementById('taskTitle').value;
-        let category = taskCategory || '';
-        let description = document.getElementById('taskDescription').value;
-        let date = document.getElementById('taskDate').value;
-        let urgency = taskUrgency || '';
-        let assignedAccount = worker || '';
-        generateNewTask(title, category, description, date, urgency, assignedAccount);
-        alert('You have create a task! You can find it in Backlog.');
+    let title = document.getElementById('taskTitle').value;
+    let category = taskCategory || '';
+    let description = document.getElementById('taskDescription').value;
+    let date = document.getElementById('taskDate').value;
+    let urgency = taskUrgency || '';
+    let assignedAccount = worker || '';
+    generateNewTask(title, category, description, date, urgency, assignedAccount);
 }
 
 
@@ -52,13 +52,14 @@ async function generateNewTask(title, category, description, date, urgency, assi
     }
     allTasks.push(newTask);
     await backend.setItem('allTasks', JSON.stringify(allTasks));
+    showPopUpWindow();
     cleanTaskForm();
     init();
 }
 
 
 function chooseAssignedAccount(position, name) {
-    document.getElementById('worker-' + position).style.border = '1px solid red'; 
+    document.getElementById('worker-' + position).style.border = '1px solid red';
     worker = name;
 }
 
@@ -75,12 +76,24 @@ function chooseUrgency(position, name) {
 }
 
 
+/* Show a Modal Popup Box when a task was created */
+function showPopUpWindow() {
+    if (modal === false) {
+        document.getElementById("popUpBox").style.display = "block";
+        modal = true;
+    } else {
+        document.getElementById("popUpBox").style.display = "none";
+        modal = false;
+    }
+}
+
+
 function cleanTaskForm() {
     document.getElementById('taskTitle').value = '';
     document.getElementById('taskDate').value = '';
     document.getElementById('taskDescription').value = '';
-    document.getElementById('worker-1').style.border = '1px solid white'; 
-    document.getElementById('worker-2').style.border = '1px solid white'; 
-    document.getElementById('worker-3').style.border = '1px solid white'; 
+    document.getElementById('worker-1').style.border = '1px solid white';
+    document.getElementById('worker-2').style.border = '1px solid white';
+    document.getElementById('worker-3').style.border = '1px solid white';
     init();
 }

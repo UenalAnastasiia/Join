@@ -27,7 +27,7 @@
 
         <div class="taskForm">
             <form onsubmit=" event.preventDefault(), createTask()">
-                    <!-- Title -->
+                <!-- Title -->
                 <div class="taskForm-left">
                     <div class="taskForm-title">
                         <h3 class="font-color">TITLE</h3>
@@ -69,7 +69,7 @@
                         <textarea required id="taskDescription" placeholder="Enter a task..." minlength="3"></textarea>
                     </div>
                 </div>
-                    <!-- Duo Date -->
+                <!-- Duo Date -->
                 <div class="taskForm-right">
                     <div class="taskForm-date">
                         <h3 class="font-color">DUE DATE</h3>
@@ -143,10 +143,18 @@
                                 </div>
                             </div>
                         </div>
-                    <!-- Buttons -->
+                        <!-- Buttons -->
                         <div class="taskForm-buttons">
                             <button type="reset" onclick="cleanTaskForm(), deleteTask() ">CANCEL</button>
                             <button type="submit">CREATE TASK</button>
+                        </div>
+                        <div id="popUpBox">
+                            <div class="popUpWindow">
+                                <i class="fas fa-check-circle"></i>
+                                <h1>Task done!</h1>
+                                <a class="popUpBtn popUpMargin" href="../html/backlog.html">Go to Backlog</a>
+                                <a class="popUpBtn" onclick="showPopUpWindow()">Create a new Task</a>
+                            </div>
                         </div>
                     </div>
             </form>
