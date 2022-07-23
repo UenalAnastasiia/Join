@@ -51,14 +51,22 @@ async function init() {
 
 function renderBacklog() {
   let backlogArea = document.getElementById('backlog-area');
-    for (let i = 0; i < allTasks.length; i++) {
-      const task = allTasks[i];
-      document.getElementById('backlog-noTask').classList.add('d-none');
-      document.getElementById('backlogContainerHeadline').classList.remove('d-none');
-      backlogArea.innerHTML += generateBacklogAreaHTML(task);
+  backlogArea.innerHTML = '';
+    if(allTasks !== null) {
+      for(let i = 0; i < allTasks.length; i++) {
+        document.getElementById('backlog-noTask').classList.add('d-none');
+        document.getElementById('backlogContainerHeadline').classList.remove('d-none');
+        backlogArea.innerHTML += generateBacklogAreaHTML(i);
+      }
     }
 }
 
+async function deleteTask(i) {
+  await backend.deleteItem('allTasks');
+  allTasks.splice(i, 1);
+  await backend.setItem('allTasks', JSON.stringify(allTasks));
+  init();
+}
 
 function openDetails() {
   document.body.innerHTML += openDetailsHTML();
