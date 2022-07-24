@@ -75,6 +75,16 @@ function chooseUrgency(position, name) {
     taskUrgency = name;
 }
 
+function workerImage(number) {
+    let imagebox = document.getElementById('image');
+    imagebox.src = `../img/${number}.jpg`;
+
+/*     let image = document.createElement('img'); 
+    image.setAttribute('src', `../img/${name}.jpg`);
+    imagebox.appendChild(image); */
+
+}
+
 
 /* Show a Modal Popup Box when a task was created */
 function showPopUpWindow() {

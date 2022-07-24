@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../img/joinlogo.png" type="image/x-icon">
 </head>
 
-<body onload="init(), loadDate()">
+<body onload="init(), loadDate(), workerImage(name)">
     <div w3-include-html="../html/navbar.html"></div>
     <div class="addtaskContainer">
         <div class="addtaskHeader">
@@ -106,8 +106,9 @@
                         <div class="taskForm-account">
                             <div class="taskAccount-box" id="worker-1"
                                 onclick="chooseAssignedAccount(1, 'Leon Groschek')">
-                                <div class="taskAccountImg cursor">
-                                    <img src="../img/profile.jpg">
+                                <div onload="workerImage('1')" class="taskAccountImg cursor">
+                                    <img  id="image" src="">
+                                    <!-- <img src="../img/1.jpg"> -->
                                 </div>
                                 <div class="cursor">
                                     <span>Leon Groschek</span>
@@ -120,7 +121,7 @@
                             <div class="taskAccount-box" id="worker-2"
                                 onclick="chooseAssignedAccount(2, 'Anastasiia Ünal')">
                                 <div class="taskAccountImg cursor">
-                                    <img src="../img/Anastasiia.jpg">
+                                    <img src="../img/2.jpg">
                                 </div>
                                 <div class="cursor">
                                     <span>Anastasiia Ünal</span>
@@ -133,7 +134,7 @@
                             <div class="taskAccount-box" id="worker-3"
                                 onclick="chooseAssignedAccount(3, 'Max Mustermann')">
                                 <div class="taskAccountImg cursor">
-                                    <img src="../img/man.png">
+                                    <img src="../img/3.jpg">
                                 </div>
                                 <div class="cursor">
                                     <span>Max Mustermann</span>

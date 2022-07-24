@@ -5,7 +5,7 @@ function generateBacklogAreaHTML(task) {
                     <div class="assignedTo">
                         <div class="categoryBgColor"></div>
                         <div>
-                            <img class="backlogImg" src="../img/profile.jpg" alt="">
+                            <img class="backlogImg" src="../img/1.jpg" alt="">
                         </div>
                         <div class="assignedToProfile">
                             <span id="backlog-title" title="Leon Groschek">${task['assignedAccount']}</span>
