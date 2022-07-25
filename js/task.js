@@ -11,6 +11,7 @@ async function init() {
     loadNavBar();
     await downloadFromServer();
     allTasks = JSON.parse(backend.getItem('allTasks')) || [];
+    console.clear();
     console.log(allTasks);
 }
 

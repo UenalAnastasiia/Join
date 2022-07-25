@@ -1,41 +1,5 @@
 "use strict";
 
-let newTask = {
-  title: '',
-  category: '',
-  description: '',
-  date: '',
-  urgency: '',
-  assignedAccount: ''
-};
-
-/* let taskAccountProfile1 = [
-  {
-      'image': '../img/profile.jpg',
-      'name': 'Leon Groschek',
-      'e-mail': 'leon.groschek12@gmail.com',
-      'job': 'Software Developer'
-  }
-];
-
-let taskAccountProfile2 = [
-  {
-      'image': '../img/Anastasiia.jpg',
-      'name': 'Anastasiia Ünal',
-      'e-mail': 'velika908@gmail.com',
-      'job': 'Software Developer'
-  }
-];
-
-let taskAccountProfile3 = [
-  {
-      'image': '../img/man.png',
-      'name': 'Max Mustermann',
-      'e-mail': 'mustermann@gmail.com',
-      'job': 'Administrator'
-  }
-]; */
-
 let allTasks = [];
 
 setURL('https://gruppe-276.developerakademie.net/smallest_backend_ever');
@@ -69,10 +33,10 @@ async function deleteTask(i) {
 }
 
 function openDetails(i) {
-  document.body.innerHTML += openDetailsHTML();
+  document.body.innerHTML += openDetailsHTML(i);
   let showDetails = document.getElementById("backlogDetailsContainer");
   showDetails.classList.remove("d-none");
-  openDetailTitle(i);
+  openDetailLoadContent(i);
 }
 
 
@@ -86,16 +50,44 @@ function clickToCopy() {
   let email = document.getElementById("copyEmail").innerText;
   email.textContent; 
   navigator.clipboard.writeText(email); 
-  console.log(email);
 }
 
-function openDetailTitle(i) {
+function openDetailLoadContent(i) {
   document.getElementById('inputDetailContainer').value = allTasks[i].title;
   document.getElementById('textareaDetailContainer').value = allTasks[i].description;
   document.getElementById('taskCategory').innerText = allTasks[i].category;
   document.getElementById('dateDetailContainer').value = allTasks[i].date;
   document.getElementById('urgencyDetailContainer').innerText = allTasks[i].urgency;
+  document.getElementById('assignedToDetailContainer').innerText = allTasks[i].assignedAccount;
 }
+
+function openDetailGetEditContent(i) {
+  let title = document.getElementById('inputDetailContainer').value;
+  let description = document.getElementById('textareaDetailContainer').value;
+  let category = document.getElementById('taskCategory').innerText;
+  let date = document.getElementById('dateDetailContainer').value;
+  let urgency = document.getElementById('urgencyDetailContainer').innerText;
+  let assignedAccount = document.getElementById('assignedToDetailContainer').innerText;
+  pushEditContent(title, description, category, date, urgency, assignedAccount)
+}
+
+async function pushEditContent(title, description, category, date, urgency, assignedAccount, i) {
+  let newTask = {
+    'title': title,
+    'category': category,
+    'description': description,
+    'date': date,
+    'urgency': urgency,
+    'assignedAccount': assignedAccount
+  }
+  await backend.deleteItem('allTasks'); 
+  allTasks.splice(i, 1)
+  allTasks.push(newTask); 
+  await backend.setItem('allTasks', JSON.stringify(allTasks));
+  init();
+  closeDetails();
+}
+
 
 /* function showProfile() {
   let profile = document.getElementById('backlog-title').innerText;

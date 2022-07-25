@@ -207,16 +207,14 @@
   color: #000;
 }
 
-
-.openDetailContainer textarea {
-  resize: none;
+.editBacklog{
   width: 100%;
-  border-radius: 15px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
-  box-sizing: border-box;
+  margin: 0;
 }
 
-.openDetailContainer input {
+.openDetailContainer input,
+.openDetailContainer textarea {
+  resize: none;
   width: 100%;
   padding: 12px 6px;
   border-radius: 15px;
