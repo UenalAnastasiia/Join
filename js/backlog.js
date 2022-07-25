@@ -44,7 +44,7 @@ async function init() {
     loadNavBar();
     await downloadFromServer();
     allTasks = JSON.parse(backend.getItem('allTasks'));
-    console.log(allTasks);
+    console.log(allTasks); 
     renderBacklog();
 }
 
@@ -62,16 +62,17 @@ function renderBacklog() {
 }
 
 async function deleteTask(i) {
-  await backend.deleteItem('allTasks');
-  allTasks.splice(i, 1);
+  await backend.deleteItem('allTasks'); 
+  allTasks.splice(i, 1)
   await backend.setItem('allTasks', JSON.stringify(allTasks));
   init();
 }
 
-function openDetails() {
+function openDetails(i) {
   document.body.innerHTML += openDetailsHTML();
   let showDetails = document.getElementById("backlogDetailsContainer");
   showDetails.classList.remove("d-none");
+  openDetailTitle(i);
 }
 
 
@@ -83,9 +84,17 @@ function closeDetails() {
 
 function clickToCopy() {
   let email = document.getElementById("copyEmail").innerText;
-  email.textContent;
-  navigator.clipboard.writeText(email);
+  email.textContent; 
+  navigator.clipboard.writeText(email); 
   console.log(email);
+}
+
+function openDetailTitle(i) {
+  document.getElementById('inputDetailContainer').value = allTasks[i].title;
+  document.getElementById('textareaDetailContainer').value = allTasks[i].description;
+  document.getElementById('taskCategory').innerText = allTasks[i].category;
+  document.getElementById('dateDetailContainer').value = allTasks[i].date;
+  document.getElementById('urgencyDetailContainer').innerText = allTasks[i].urgency;
 }
 
 /* function showProfile() {
