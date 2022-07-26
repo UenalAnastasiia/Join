@@ -17,7 +17,7 @@
     <link rel="shortcut icon" href="../img/joinlogo.png" type="image/x-icon">
 </head>
 
-<body onload="init(), loadDate(), workerImage(name)">
+<body onload="init(), loadDate(), workerImage()">
     <div w3-include-html="../html/navbar.html"></div>
     <div class="addtaskContainer">
         <div class="addtaskHeader">
@@ -106,7 +106,8 @@
                         <div class="taskForm-account">
                             <div class="taskAccount-box" id="worker-1"
                                 onclick="chooseAssignedAccount(1, 'Leon Groschek')">
-                                <div onload="workerImage('1')" class="taskAccountImg cursor">
+                                <div onload="workerImage(1)" class="taskAccountImg cursor">
+                                    <div class="d-none worker-number">1</div>
                                     <img  id="image" src="">
                                     <!-- <img src="../img/1.jpg"> -->
                                 </div>
@@ -120,8 +121,9 @@
 
                             <div class="taskAccount-box" id="worker-2"
                                 onclick="chooseAssignedAccount(2, 'Anastasiia Ünal')">
-                                <div class="taskAccountImg cursor">
-                                    <img src="../img/2.jpg">
+                                <div onload="workerImage()" class="taskAccountImg cursor">
+                                    <div class="d-none worker-number">2</div>
+                                    <img  id="image" src="">
                                 </div>
                                 <div class="cursor">
                                     <span>Anastasiia Ünal</span>
@@ -133,8 +135,9 @@
 
                             <div class="taskAccount-box" id="worker-3"
                                 onclick="chooseAssignedAccount(3, 'Max Mustermann')">
-                                <div class="taskAccountImg cursor">
-                                    <img src="../img/3.jpg">
+                                <div onload="workerImage()" class="taskAccountImg cursor">
+                                    <div class="d-none worker-number">3</div>
+                                    <img  id="image" src="">
                                 </div>
                                 <div class="cursor">
                                     <span>Max Mustermann</span>

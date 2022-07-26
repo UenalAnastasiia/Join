@@ -5,6 +5,7 @@ let taskCategory;
 let taskUrgency;
 let modal = false;
 
+
 setURL('https://gruppe-276.developerakademie.net/smallest_backend_ever');
 
 async function init() {
@@ -73,16 +74,6 @@ function chooseCategory(position, name) {
 function chooseUrgency(position, name) {
     document.getElementById('urgency-' + position).style.background = 'grey';
     taskUrgency = name;
-}
-
-function workerImage(number) {
-    let imagebox = document.getElementById('image');
-    imagebox.src = `../img/${number}.jpg`;
-
-/*     let image = document.createElement('img'); 
-    image.setAttribute('src', `../img/${name}.jpg`);
-    imagebox.appendChild(image); */
-
 }
 
 

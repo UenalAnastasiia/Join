@@ -9,32 +9,6 @@ let newTask = {
   assignedAccount: ''
 };
 
-/* let taskAccountProfile1 = [
-  {
-      'image': '../img/profile.jpg',
-      'name': 'Leon Groschek',
-      'e-mail': 'leon.groschek12@gmail.com',
-      'job': 'Software Developer'
-  }
-];
-
-let taskAccountProfile2 = [
-  {
-      'image': '../img/Anastasiia.jpg',
-      'name': 'Anastasiia Ünal',
-      'e-mail': 'velika908@gmail.com',
-      'job': 'Software Developer'
-  }
-];
-
-let taskAccountProfile3 = [
-  {
-      'image': '../img/man.png',
-      'name': 'Max Mustermann',
-      'e-mail': 'mustermann@gmail.com',
-      'job': 'Administrator'
-  }
-]; */
 
 let allTasks = [];
 
@@ -87,12 +61,3 @@ function clickToCopy() {
   navigator.clipboard.writeText(email);
   console.log(email);
 }
-
-/* function showProfile() {
-  let profile = document.getElementById('backlog-title').innerText;
-  if (profile == 'Anastasiia Ünal') {
-    document.getElementById('profile-image').innerHTML = `
-      <img class="backlogImg" src="${taskAccountProfile2['image']}">
-    `;
-  }
-} */
