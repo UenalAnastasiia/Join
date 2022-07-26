@@ -70,12 +70,12 @@ function openDetailLoadContent(i) {
 function openDetailGetEditContent(i) {
   let title = document.getElementById('inputDetailContainer').value;
   let description = document.getElementById('textareaDetailContainer').value;
-  let category = taskCategoryBacklog;
+  let category = (taskCategoryBacklog == undefined) ? allTasks[i].category : taskCategoryBacklog;
   let date = document.getElementById('dateDetailContainer').value;
-  let urgency = taskUrgencyBacklog;
-  let assignedAccount = worker;
-  let imgName = assignedAccount.split(' ').slice(0, 1).join('');
-  let mail = taskEmail;
+  let urgency = (taskUrgencyBacklog == undefined) ? allTasks[i].urgency : taskUrgencyBacklog;
+  let assignedAccount = (worker == undefined) ? allTasks[i].assignedAccount : worker;
+  let imgName = (assignedAccount == undefined) ? allTasks[i].imgName : assignedAccount.split(' ').slice(0, 1).join('');
+  let mail = (taskEmail == undefined) ? allTasks[i].mail : taskEmail;
   pushEditContent(title, description, category, date, urgency, assignedAccount, imgName, mail, i)
 }
 
@@ -90,6 +90,10 @@ async function pushEditContent(title, description, category, date, urgency, assi
     'imgName': imgName,
     'mail': mail
   }
+  afterPushEditContent(newTask, i);
+}
+
+async function afterPushEditContent(newTask, i) {
   await backend.deleteItem('allTasks'); 
   allTasks.splice(i, 1)
   allTasks.push(newTask); 
@@ -117,12 +121,3 @@ function chooseAssignedAccountBacklog(position, name, email) {
   taskEmail = email;
 }
 
-
-/* function showProfile() {
-  let profile = document.getElementById('backlog-title').innerText;
-  if (profile == 'Anastasiia Ünal') {
-    document.getElementById('profile-image').innerHTML = `
-      <img class="backlogImg" src="${taskAccountProfile2['image']}">
-    `;
-  }
-} */
