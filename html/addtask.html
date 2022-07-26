@@ -103,6 +103,25 @@
                     <!-- Assigned to -->
                     <div class="taskForm-assigned">
                         <h3 class="font-color">ASSIGNED TO</h3>
+
+                        <div title="Click here to add a new worker" class="add-user-box">
+                            <img onclick="openWindowAddNewWorker()" src="../img/plus.png">
+                        </div>
+                        <div id="newWorkerWindow">
+                            <div class="newWorkerBox">
+                                <div class="newWorkerInputs">
+                                    <span>Add a new Worker</span>
+                                    <input placeholder="First Name" type="text" id="newWorkerFirstName">
+                                    <input placeholder="Last Name" type="text" id="newWorkerLastName">
+                                    <input placeholder="Job-Position" type="text" id="newWorkerJobPosition">
+                                </div>
+                                <div class="newWorker-btn">
+                                    <button>Cancel</button>
+                                    <button onclick="createNewWorker()">Add</button>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="taskForm-account">
                             <div class="taskAccount-box" id="worker-1"
                                 onclick="chooseAssignedAccount(1, 'Leon Groschek', 'leon.groschek12@gmail.com')">
@@ -143,6 +162,7 @@
                                 </div>
                             </div>
                         </div>
+                        <div id="new-worker-box"></div>
                         <!-- Buttons -->
                         <div class="taskForm-buttons">
                             <button type="reset" onclick="cleanTaskForm(), deleteTask() ">CANCEL</button>
