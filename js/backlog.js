@@ -1,6 +1,10 @@
 "use strict";
 
 let allTasks = [];
+let taskCategoryBacklog;
+let taskUrgencyBacklog;
+let worker;
+let taskEmail;
 
 setURL('https://gruppe-276.developerakademie.net/smallest_backend_ever');
 
@@ -20,7 +24,9 @@ function renderBacklog() {
       for(let i = 0; i < allTasks.length; i++) {
         document.getElementById('backlog-noTask').classList.add('d-none');
         document.getElementById('backlogContainerHeadline').classList.remove('d-none');
-        backlogArea.innerHTML += generateBacklogAreaHTML(i);
+        let imgName = allTasks[i].imgName;
+        let emailBacklog = allTasks[i].mail;
+        backlogArea.innerHTML += generateBacklogAreaHTML(emailBacklog, imgName, i);
       }
     }
 }
@@ -64,21 +70,25 @@ function openDetailLoadContent(i) {
 function openDetailGetEditContent(i) {
   let title = document.getElementById('inputDetailContainer').value;
   let description = document.getElementById('textareaDetailContainer').value;
-  let category = document.getElementById('taskCategory').innerText;
+  let category = taskCategoryBacklog;
   let date = document.getElementById('dateDetailContainer').value;
-  let urgency = document.getElementById('urgencyDetailContainer').innerText;
-  let assignedAccount = document.getElementById('assignedToDetailContainer').innerText;
-  pushEditContent(title, description, category, date, urgency, assignedAccount)
+  let urgency = taskUrgencyBacklog;
+  let assignedAccount = worker;
+  let imgName = assignedAccount.split(' ').slice(0, 1).join('');
+  let mail = taskEmail;
+  pushEditContent(title, description, category, date, urgency, assignedAccount, imgName, mail, i)
 }
 
-async function pushEditContent(title, description, category, date, urgency, assignedAccount, i) {
+async function pushEditContent(title, description, category, date, urgency, assignedAccount, imgName, mail, i) {
   let newTask = {
     'title': title,
     'category': category,
     'description': description,
     'date': date,
     'urgency': urgency,
-    'assignedAccount': assignedAccount
+    'assignedAccount': assignedAccount,
+    'imgName': imgName,
+    'mail': mail
   }
   await backend.deleteItem('allTasks'); 
   allTasks.splice(i, 1)
@@ -86,6 +96,25 @@ async function pushEditContent(title, description, category, date, urgency, assi
   await backend.setItem('allTasks', JSON.stringify(allTasks));
   init();
   closeDetails();
+}
+ 
+function chooseCategoryBacklog(name) {
+    taskCategoryBacklog = name;
+}
+ 
+function chooseUrgencyBacklog(name) {
+    taskUrgencyBacklog = name;
+}
+
+function chooseAssignedAccountBacklog(position, name, email) {
+  let border = document.getElementById('workerBacklog-' + position);
+  if(border.style.border == '1px solid red') {
+    border.style.border = 'none';
+  } else {
+    border.style.border = '1px solid red';
+  }
+  worker = name;
+  taskEmail = email;
 }
 
 

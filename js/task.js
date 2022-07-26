@@ -3,6 +3,7 @@ let allTasks = [];
 let worker;
 let taskCategory;
 let taskUrgency;
+let taskEmail;
 let modal = false;
 
 setURL('https://gruppe-276.developerakademie.net/smallest_backend_ever');
@@ -35,21 +36,25 @@ function createTask() {
     let date = document.getElementById('taskDate').value;
     let urgency = taskUrgency || '';
     let assignedAccount = worker || '';
-    generateNewTask(title, category, description, date, urgency, assignedAccount);
+    let imgName = assignedAccount.split(' ').slice(0, 1).join('');
+    let mail = taskEmail;
+    generateNewTask(title, category, description, date, urgency, assignedAccount, imgName, mail);
 }
 
 
 /** 
  * Generate a Task, push the task in JSON-Array and clean the task-form
  */
-async function generateNewTask(title, category, description, date, urgency, assignedAccount) {
+async function generateNewTask(title, category, description, date, urgency, assignedAccount, imgName, mail) {
     let newTask = {
         'title': title,
         'category': category,
         'description': description,
         'date': date,
         'urgency': urgency,
-        'assignedAccount': assignedAccount
+        'assignedAccount': assignedAccount,
+        'imgName': imgName,
+        'mail': mail
     }
     allTasks.push(newTask);
     await backend.setItem('allTasks', JSON.stringify(allTasks));
@@ -59,9 +64,10 @@ async function generateNewTask(title, category, description, date, urgency, assi
 }
 
 
-function chooseAssignedAccount(position, name) {
+function chooseAssignedAccount(position, name, email) {
     document.getElementById('worker-' + position).style.border = '1px solid red';
     worker = name;
+    taskEmail = email;
 }
 
 
@@ -76,7 +82,6 @@ function chooseUrgency(position, name) {
     taskUrgency = name;
 }
 
-
 /* Show a Modal Popup Box when a task was created */
 function showPopUpWindow() {
     if (modal === false) {
@@ -87,7 +92,6 @@ function showPopUpWindow() {
         modal = false;
     }
 }
-
 
 function cleanTaskForm() {
     document.getElementById('taskTitle').value = '';
