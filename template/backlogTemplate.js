@@ -3,7 +3,7 @@ function generateBacklogAreaHTML(emailBacklog, imgName, i) {
               <div class="backlogContainerContent">
                 <div class="backlogContent">
                     <div class="assignedTo">
-                        <div class="categoryBgColor"></div>
+                        <div id="categoryBgColor" class="categoryBgColor"></div>
                         <div>
                             <img class="backlogImg" src="../img/${imgName}.jpg" alt="">
                         </div>
@@ -33,8 +33,8 @@ function openDetailsHTML(i) {
             </div>
             <!-- ====== TITLE ====== -->
             <div class="openDetailContainer">
-                <h3>Titel</h4>
-                <input id="inputDetailContainer" autocomplete="off" minlength="3" type="text">
+                <h3>Titel</h3>
+                <input required id="inputDetailContainer" autocomplete="off" minlength="3" type="text">
             </div>
             <!-- ====== CATEGORY ====== -->
             <div class="openDetailContainer">
@@ -125,7 +125,7 @@ function openDetailsHTML(i) {
                         <div class="taskAccount-box" id="workerBacklog-3"
                             onclick="chooseAssignedAccountBacklog(3, 'Max Mustermann', 'max.mustermann@gmail.com')">
                             <div class="taskAccountImg cursor">
-                                <img src="../img/man.png">
+                                <img src="../img/Max.jpg">
                             </div>
                             <div class="cursor">
                                 <span>Max Mustermann</span><br><br>
