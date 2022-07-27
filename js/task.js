@@ -1,10 +1,12 @@
 let taskAssignedAccounts = [];
 let allTasks = [];
+let newWorkers = [];
 let worker;
 let taskCategory;
 let taskUrgency;
 let taskEmail;
 let modal = false;
+let newWorkerWindow = false;
 
 setURL('https://gruppe-276.developerakademie.net/smallest_backend_ever');
 
@@ -92,6 +94,60 @@ function showPopUpWindow() {
         modal = false;
     }
 }
+
+
+/* 
+ * Create a new Worker in "Assigned To"
+ */
+function openWindowAddNewWorker() {
+    if (newWorkerWindow === false) {
+        document.getElementById("newWorkerWindow").style.display = "flex";
+        newWorkerWindow = true;
+    } else {
+        document.getElementById("newWorkerWindow").style.display = "none";
+        newWorkerWindow = false;
+    }
+}
+
+
+function createNewWorker() {
+    document.getElementById('new-worker-box').innerHTML = '';
+    openWindowAddNewWorker();
+    let newFirstName = document.getElementById('newWorkerFirstName').value;
+    let newLastName = document.getElementById('newWorkerLastName').value;
+    let newJobPosition = document.getElementById('newWorkerJobPosition').value;
+    let newWorker = {
+        'newWorkerFirstName': newFirstName,
+        'newWorkerLastName': newLastName,
+        'newWorkerJobPosition': newJobPosition
+    }
+    newWorkers.push(newWorker);
+    for (let i = 0; i < newWorkers.length; i++) {
+        document.getElementById('new-worker-box').innerHTML += generateHTMLNewWorker(i);
+        
+    }
+    document.getElementById('newWorkerFirstName').value = '';
+    document.getElementById('newWorkerLastName').value = '';
+    document.getElementById('newWorkerJobPosition').value = '';
+}
+
+
+function generateHTMLNewWorker(i) {
+    return /*html*/ `
+        <div class="taskAccount-box" id="worker" onclick="chooseAssignedAccount(1, 'Leon Groschek', 'leon.groschek12@gmail.com')">
+            <div class="taskAccountImg cursor">
+                <img src="../img/Max.jpg">
+            </div>
+            <div class="cursor">
+                <span>${newWorkers[i]["newWorkerFirstName"]} ${newWorkers[i]["newWorkerLastName"]}</span>
+                <br>
+                <br>
+                <span>${newWorkers[i]["newWorkerJobPosition"]}</span>
+            </div>
+        </div>
+    `;
+}
+
 
 function cleanTaskForm() {
     document.getElementById('taskTitle').value = '';

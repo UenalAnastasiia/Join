@@ -314,20 +314,24 @@ form {
 .taskForm-account {
     display: flex;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 16px;
     padding-left: 10px;
 }
 
-.plus-img {
-    height: 20px !important;
-    width: 20px !important;
-    padding: 6px;
-    border-radius: 100%;
-    border: 1px solid white;
-    margin-right: 12px;
+.add-user-box {
+    margin-top: 12px;
+    margin-left: 24px;
 }
 
-.plus-img:hover {
+.add-user-box img {
+    padding: 4px;
+    border-radius: 100%;
+    border: 1px solid white;
+    height: 16px;
+    width: 16px;
+}
+
+.add-user-box img:hover {
     background: white;
     border: 1px solid #391e7af7;
     cursor: pointer;
@@ -338,6 +342,7 @@ form {
     flex-direction: column;
     text-align: center;
     min-width: 150px;
+    max-width: 200px;
     margin-right: 10px;
     padding: 6px;
     border: 1px solid white;
@@ -366,7 +371,7 @@ form {
     justify-content: flex-end;
 }
 
-button {
+.taskForm-buttons button {
     background-color: #ffffff00;
     padding: 8px;
     border-radius: 10px;
@@ -376,7 +381,7 @@ button {
     margin-right: 24px;
 }
 
-button:last-child {
+.taskForm-buttons button:last-child {
     background-color: #391e7af7;
 }
 
@@ -494,7 +499,7 @@ button:last-child:hover {
 
   /* Modal Popup Box */
 
-  #popUpBox {
+  #popUpBox, #newWorkerWindow {
     display: none;
     justify-content: center;
     align-items: center;
@@ -506,7 +511,29 @@ button:last-child:hover {
     background-color: rgb(203 200 200 / 60%);
   }
 
-  .popUpWindow {
+  #newWorkerWindow {
+        display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(203 200 200 / 60%);
+  }
+
+  .newWorkerBox {
+    display: flex;
+    flex-direction: column;
+    width: 250px !important;
+  }
+
+  .newWorkerInputs span {
+    color: white;
+  }
+
+  .popUpWindow, .newWorkerBox {
     width: 500px;
     overflow: hidden;
     background: rgb(95, 30, 156);
