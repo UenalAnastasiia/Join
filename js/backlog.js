@@ -6,6 +6,13 @@ let taskUrgencyBacklog;
 let worker;
 let taskEmail;
 
+const colors = {
+  'Software Development': 'green',
+  'Sale': 'orange',
+  'Product': 'blue',
+  'Marketing': 'red',
+}
+
 setURL('https://gruppe-276.developerakademie.net/smallest_backend_ever');
 
 async function init() {
@@ -27,6 +34,7 @@ function renderBacklog() {
         let imgName = allTasks[i].imgName;
         let emailBacklog = allTasks[i].mail;
         backlogArea.innerHTML += generateBacklogAreaHTML(emailBacklog, imgName, i);
+        categoryBgColors(i);
       }
     }
 }
@@ -39,7 +47,7 @@ async function deleteTask(i) {
 }
 
 function openDetails(i) {
-  document.body.innerHTML += openDetailsHTML(i);
+  document.getElementById('backlogOpenDetails').innerHTML += openDetailsHTML(i);
   let showDetails = document.getElementById("backlogDetailsContainer");
   showDetails.classList.remove("d-none");
   openDetailLoadContent(i);
@@ -48,6 +56,8 @@ function openDetails(i) {
 
 function closeDetails() {
   let showDetails = document.getElementById("backlogDetailsContainer");
+  let showDetailsContainer = document.getElementById('backlogOpenDetails');
+  showDetailsContainer.innerHTML = '';
   showDetails.classList.add("d-none");
 }
 
@@ -99,7 +109,15 @@ async function afterPushEditContent(newTask, i) {
   allTasks.push(newTask); 
   await backend.setItem('allTasks', JSON.stringify(allTasks));
   init();
+  clearOpenDetailTasks();
   closeDetails();
+}
+
+function clearOpenDetailTasks() {
+  taskCategoryBacklog = undefined;
+  taskUrgencyBacklog = undefined;
+  worker = undefined;
+  taskEmail = undefined;
 }
  
 function chooseCategoryBacklog(name) {
@@ -119,5 +137,11 @@ function chooseAssignedAccountBacklog(position, name, email) {
   }
   worker = name;
   taskEmail = email;
+}
+
+function categoryBgColors(i) {
+  const currentCategory = allTasks[i].category;
+  const color = colors[currentCategory]
+  document.getElementById(`categoryBgColor${i}`).style.backgroundColor = color;
 }
 

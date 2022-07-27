@@ -3,7 +3,7 @@ function generateBacklogAreaHTML(emailBacklog, imgName, i) {
               <div class="backlogContainerContent">
                 <div class="backlogContent">
                     <div class="assignedTo">
-                        <div id="categoryBgColor" class="categoryBgColor"></div>
+                        <div id="categoryBgColor${i}" class="categoryBgColor"></div>
                         <div>
                             <img class="backlogImg" src="../img/${imgName}.jpg" alt="">
                         </div>
