@@ -67,7 +67,12 @@ async function generateNewTask(title, category, description, date, urgency, assi
 
 
 function chooseAssignedAccount(position, name, email) {
-    document.getElementById('worker-' + position).style.border = '1px solid red';
+    workerBorder = document.getElementById('worker-' + position);
+    if (workerBorder.style.border == '1px solid red') {
+        workerBorder.style.border = '1px solid white';
+    } else {
+        workerBorder.style.border = '1px solid red';
+    }
     worker = name;
     taskEmail = email;
 }
@@ -99,7 +104,7 @@ function showPopUpWindow() {
 /* 
  * Create a new Worker in "Assigned To"
  */
-function openWindowAddNewWorker() {
+function windowAddNewWorker() {
     if (newWorkerWindow === false) {
         document.getElementById("newWorkerWindow").style.display = "flex";
         newWorkerWindow = true;
@@ -110,9 +115,8 @@ function openWindowAddNewWorker() {
 }
 
 
-function createNewWorker() {
-    document.getElementById('new-worker-box').innerHTML = '';
-    openWindowAddNewWorker();
+async function createNewWorker() {
+    windowAddNewWorker();
     let newFirstName = document.getElementById('newWorkerFirstName').value;
     let newLastName = document.getElementById('newWorkerLastName').value;
     let newJobPosition = document.getElementById('newWorkerJobPosition').value;
@@ -122,9 +126,12 @@ function createNewWorker() {
         'newWorkerJobPosition': newJobPosition
     }
     newWorkers.push(newWorker);
+    console.log(newWorkers);
+    await backend.setItem('newWorkers', JSON.stringify(newWorkers));
+    document.getElementById('new-worker-box').innerHTML = '';
     for (let i = 0; i < newWorkers.length; i++) {
-        document.getElementById('new-worker-box').innerHTML += generateHTMLNewWorker(i);
-        
+        const worker = newWorkers[i];
+        document.getElementById('new-worker-box').innerHTML += generateHTMLNewWorker(worker);
     }
     document.getElementById('newWorkerFirstName').value = '';
     document.getElementById('newWorkerLastName').value = '';
@@ -132,17 +139,17 @@ function createNewWorker() {
 }
 
 
-function generateHTMLNewWorker(i) {
+function generateHTMLNewWorker(worker) {
     return /*html*/ `
-        <div class="taskAccount-box" id="worker" onclick="chooseAssignedAccount(1, 'Leon Groschek', 'leon.groschek12@gmail.com')">
+        <div class="taskAccount-box taskAccount-newWorker-box" id="worker">
             <div class="taskAccountImg cursor">
                 <img src="../img/Max.jpg">
             </div>
             <div class="cursor">
-                <span>${newWorkers[i]["newWorkerFirstName"]} ${newWorkers[i]["newWorkerLastName"]}</span>
+                <span>${worker["newWorkerFirstName"]} ${worker["newWorkerLastName"]}</span>
                 <br>
                 <br>
-                <span>${newWorkers[i]["newWorkerJobPosition"]}</span>
+                <span>${worker["newWorkerJobPosition"]}</span>
             </div>
         </div>
     `;
@@ -157,4 +164,9 @@ function cleanTaskForm() {
     document.getElementById('worker-2').style.border = '1px solid white';
     document.getElementById('worker-3').style.border = '1px solid white';
     init();
+}
+
+
+async function deleteTask() {
+    await backend.deleteItem('allTasks');
 }

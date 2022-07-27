@@ -8,7 +8,6 @@
     <title>Join - Add Task</title>
     <!-- Libraries JavaScript -->
     <script src="../smallest_backend_ever/mini_backend.js"></script>
-    <script src="../js/script.js"></script>
     <script src="../js/task.js"></script>
     <!-- Libraries Style -->
     <link rel="stylesheet" href="../css/fonts.css">
@@ -105,7 +104,7 @@
                         <h3 class="font-color">ASSIGNED TO</h3>
 
                         <div title="Click here to add a new worker" class="add-user-box">
-                            <img onclick="openWindowAddNewWorker()" src="../img/plus.png">
+                            <img onclick="windowAddNewWorker()" src="../img/plus.png">
                         </div>
                         <div id="newWorkerWindow">
                             <div class="newWorkerBox">
@@ -116,7 +115,7 @@
                                     <input placeholder="Job-Position" type="text" id="newWorkerJobPosition">
                                 </div>
                                 <div class="newWorker-btn">
-                                    <button>Cancel</button>
+                                    <button onclick="windowAddNewWorker()">Go back</button>
                                     <button onclick="createNewWorker()">Add</button>
                                 </div>
                             </div>
