@@ -14,7 +14,7 @@
   align-items: center;
   flex-direction: column;
   height: 85vh;
-  width: 200px;
+  width: 250px;
   justify-content: center;
   margin: 0px 8px;
 }
@@ -313,4 +313,43 @@ h1 {
   .cards {
     justify-content: center;
   }
+}
+
+
+
+
+
+/* Board */
+.toDoTaskBox {
+  display: flex;
+  margin: 6px;
+  border: 1px solid black;
+  box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
+  padding: 8px;
+}
+
+.toDoTaskBox:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.toDoTaskHeader {
+  display: flex;
+  align-items: center;
+}
+
+.toDoTaskHeader span {
+  font-size: 16px;
+}
+
+.toDoTaskTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 8px;
+  padding-top: 4px;
+}
+
+.toDoTaskTitle span {
+  font-size: 16px;
 }
