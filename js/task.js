@@ -167,6 +167,6 @@ function cleanTaskForm() {
 }
 
 
-async function deleteTask() {
+/* async function deleteTask() {
     await backend.deleteItem('allTasks');
-}
+} */

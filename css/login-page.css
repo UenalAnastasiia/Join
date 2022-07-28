@@ -22,9 +22,16 @@ body {
   display: grid;
   justify-items: center;
   align-items: center;
-  background-color: white;
+  /* background-color: white; */
+  background-image: url('../img/background-home.jpg');
   border-radius: 7px;
   box-shadow: 0px 0px 5px 2px black;
+}
+
+#main-holder img {
+  padding: 8px;
+  background: #766b8f70;
+  border-radius: 10px;
 }
 
 /* -------------------------------------------------------------- */
@@ -106,6 +113,11 @@ main grid */
   outline: none;
 }
 
+.example:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+  transition: 225ms ease-in-out;
+}
 
 .modal {
   position: fixed;
@@ -119,31 +131,47 @@ main grid */
   transform: scale(1.1);
   transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 }
+
 .modal-content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #eeeeee;
   padding: 1rem 1.5rem;
   width: 24rem;
   border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #7e6f6f3b;
 }
+
+.modal-content h2 {
+  margin: 0;
+  color: #503f3f;;
+}
+
 .close-button {
   float: right;
-  width: 1rem;
+  width: 6rem;
   line-height: 1.5rem;
   text-align: center;
   cursor: pointer;
   border-radius: 30px;
   background-color: #eeeeee;
+  margin-top: 18px;
 }
+
 .close-button:hover {
   background-color: #adadad;
+  transform: scale(1.1);
+  transition: 225ms ease-in-out;
 }
+
 .show-modal {
   opacity: 1;
   visibility: visible;
   transform: scale(1.0);
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+  background-image: url('../img/background-home.jpg');
 }
