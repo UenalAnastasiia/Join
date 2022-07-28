@@ -23,6 +23,10 @@ body {
 
 /* ====== NAVBAR ====== */
 
+.log-link-hidden {
+    visibility: hidden;
+}
+
 .header-navbar {
     height: 100vh;
     width: 200px;

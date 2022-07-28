@@ -6,6 +6,7 @@
 const loginForm = document.getElementById("login-form");
 const loginButton = document.getElementById("login-form-submit");
 const loginErrorMsg = document.getElementById("login-error-msg");
+const loginGuestBtn = document.getElementById('login-guest');
 
 
 // When the login button is clicked, the following code is executed
@@ -30,9 +31,14 @@ loginButton.addEventListener("click", (e) => {
  * Show Modal Window after Login
  */
 function toggleModal() {
-    let modal= document.querySelector(".modal");
+    let modal = document.querySelector(".modal");
     modal.classList.toggle("show-modal");
 }
+
+
+loginGuestBtn.addEventListener('click', () => {
+    openJoin();
+});
 
 
 function openJoin() {
