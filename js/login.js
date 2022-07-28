@@ -44,3 +44,11 @@ loginGuestBtn.addEventListener('click', () => {
 function openJoin() {
     window.location.href = '../html/main.html';
 }
+
+
+/* 
+ * Load Page Transition
+ */
+window.addEventListener('beforeunload', () => {
+    document.body.classList.add("animate-out");
+  });

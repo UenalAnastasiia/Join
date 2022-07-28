@@ -11,7 +11,28 @@ body {
   display: grid;
   justify-items: center;
   align-items: center;
-  background-color: #3a3a3a;
+  background-color: #4241414f;
+}
+
+.animate-in {
+  -webkit-animation: fadeIn 1s ease-in;
+  animation: fadeIn 1s ease-in;
+}
+
+.animate-out {
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* White rectangle in the middle of the screen */
@@ -96,6 +117,7 @@ main grid */
 
 .login-form-field::placeholder {
   color: #3a3a3a;
+  padding-left: 10px;
 }
 
 /* Style the login form fields (username and password) */
@@ -106,7 +128,8 @@ main grid */
   margin-bottom: 10px;
   border-radius: 3px;
   outline: none;
-  padding: 0px 0px 5px 5px;
+  padding: 5px 0px 5px 5px;
+  font-size: 16px;
 }
 
 /* Style the login button */
