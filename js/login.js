@@ -18,7 +18,7 @@ loginButton.addEventListener("click", (e) => {
 
     if (username === "user" && password === "web_dev") {
         // If the credentials are valid, show an alert box and reload the page
-        /* alert("You have successfully logged in."); */
+        toggleModal();
     } else {
         // Otherwise, make the login error message show (change its oppacity)
         loginErrorMsg.style.opacity = 1;
@@ -35,18 +35,6 @@ let trigger = document.querySelector(".example");
 function toggleModal() {
   modal.classList.toggle("show-modal");
 }
-
-
-function windowOnClick(event) {
-  if(event.target === modal) {
-    toggleModal();
-  }
-}
-
-
-trigger.addEventListener("click", toggleModal);
-/* closeButton.addEventListener("click", toggleModal); */
-window.addEventListener("click", windowOnClick);
 
 
 function openJoin() {
