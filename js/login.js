@@ -29,11 +29,9 @@ loginButton.addEventListener("click", (e) => {
 /* 
  * Show Modal Window after Login
  */
-let modal = document.querySelector(".modal");
-let trigger = document.querySelector(".example");
-/* let closeButton = document.querySelector(".close-button"); */
 function toggleModal() {
-  modal.classList.toggle("show-modal");
+    let modal= document.querySelector(".modal");
+    modal.classList.toggle("show-modal");
 }
 
 
