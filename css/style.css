@@ -530,7 +530,7 @@ button:last-child:hover {
 
   /* Modal Popup Box */
 
-  #popUpBox, #newWorkerWindow {
+  #popUpBox {
     display: none;
     justify-content: center;
     align-items: center;
@@ -542,41 +542,7 @@ button:last-child:hover {
     background-color: rgb(203 200 200 / 60%);
   }
 
-  #newWorkerWindow {
-        display: none;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background-color: rgb(203 200 200 / 60%);
-  }
-
-  .newWorkerBox {
-    display: flex;
-    flex-direction: column;
-    width: 250px !important;
-  }
-
-  .taskAccount-newWorker-box {
-    display: flex;
-    margin-top: 12px;
-  }
-
-  #new-worker-box {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 12px;
-    max-width: 550px;
-  }
-
-  .newWorkerInputs span {
-    color: white;
-  }
-
-  .popUpWindow, .newWorkerBox {
+  .popUpWindow {
     width: 500px;
     overflow: hidden;
     background: rgb(95, 30, 156);

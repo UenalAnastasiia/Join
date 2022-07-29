@@ -1,13 +1,11 @@
 let taskAssignedAccounts = [];
 let allTasks = [];
-let newWorkers = [];
 let worker;
 let taskCategory;
 let taskUrgency;
 let taskEmail;
 let board = 'toDo';
 let modal = false;
-let newWorkerWindow = false;
 
 setURL('https://gruppe-276.developerakademie.net/smallest_backend_ever');
 
@@ -103,61 +101,6 @@ function showPopUpWindow() {
 }
 
 
-/* 
- * Create a new Worker in "Assigned To"
- */
-function windowAddNewWorker() {
-    if (newWorkerWindow === false) {
-        document.getElementById("newWorkerWindow").style.display = "flex";
-        newWorkerWindow = true;
-    } else {
-        document.getElementById("newWorkerWindow").style.display = "none";
-        newWorkerWindow = false;
-    }
-}
-
-
-async function createNewWorker() {
-    windowAddNewWorker();
-    let newFirstName = document.getElementById('newWorkerFirstName').value;
-    let newLastName = document.getElementById('newWorkerLastName').value;
-    let newJobPosition = document.getElementById('newWorkerJobPosition').value;
-    let newWorker = {
-        'newWorkerFirstName': newFirstName,
-        'newWorkerLastName': newLastName,
-        'newWorkerJobPosition': newJobPosition
-    }
-    newWorkers.push(newWorker);
-    console.log(newWorkers);
-    await backend.setItem('newWorkers', JSON.stringify(newWorkers));
-    document.getElementById('new-worker-box').innerHTML = '';
-    for (let i = 0; i < newWorkers.length; i++) {
-        const worker = newWorkers[i];
-        document.getElementById('new-worker-box').innerHTML += generateHTMLNewWorker(worker);
-    }
-    document.getElementById('newWorkerFirstName').value = '';
-    document.getElementById('newWorkerLastName').value = '';
-    document.getElementById('newWorkerJobPosition').value = '';
-}
-
-
-function generateHTMLNewWorker(worker) {
-    return /*html*/ `
-        <div class="taskAccount-box taskAccount-newWorker-box" id="worker">
-            <div class="taskAccountImg cursor">
-                <img src="../img/Max.jpg">
-            </div>
-            <div class="cursor">
-                <span>${worker["newWorkerFirstName"]} ${worker["newWorkerLastName"]}</span>
-                <br>
-                <br>
-                <span>${worker["newWorkerJobPosition"]}</span>
-            </div>
-        </div>
-    `;
-}
-
-
 function cleanTaskForm() {
     document.getElementById('taskTitle').value = '';
     document.getElementById('taskDate').value = '';
@@ -167,8 +110,3 @@ function cleanTaskForm() {
     document.getElementById('worker-3').style.border = '1px solid white';
     init();
 }
-
-
-/* async function deleteTask() {
-    await backend.deleteItem('allTasks');
-} */
