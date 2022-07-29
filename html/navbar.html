@@ -1,64 +1,62 @@
 <header>
-    <div class="header-navbar">
-        <a class="a-standart cursor greyhover" href="../html/main.html">
+    <!-- Responsive Menu -->
+    <div class="hide">
+        <div id="resp-header" class="resp-menu-header">
+            <a class="a-standart cursor greyhover" href="../html/main.html"><img src="../img/joinlogo.png"></a>
+            <img src="../img/menu.png" class="hide menu-img" onclick="openResponsiveMenu()">
+        </div>
+        <div id="menu-links" class="resp-menu-links d-none">
+            <img onclick="closeResponsiveMenu()" class="resp-close-img" src="../img/close.png">
+            <div class="resp-links">
+                <br>
+                <a class="a-standart cursor" href="../html/board.html">Board</a>
+                <a class="a-standart cursor" href="../html/backlog.html">Backlog</a>
+                <a class="a-standart cursor" href="../html/addtask.html">Add Task</a>
+                <a class="a-standart cursor" href="../html/help.html">Help</a>
+                <br> <br> <br>
+                <a class="a-standart cursor" href="../html/impressum.html">Impressum</a>
+                <a class="a-standart cursor" href="#">Datenschutz</a> <br> <br>
+                <a class="a-standart cursor logout" href="../html/index.html"> LOG OUT</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <div id="menu" class="header-navbar">
+        <a class="a-standart cursor" href="../html/main.html">
             <div class="nav-logo">
                 <img src="../img/joinlogo.png">
             </div>
         </a>
 
         <div class="header-navbar-links">
-            <a class="a-standart cursor greyhover" href="../html/board.html">
+            <a class="a-standart cursor" href="../html/board.html">
                 <img src="../img/calendar.png">
                 <span>Board</span>
             </a>
 
-            <a class="a-standart cursor greyhover" href="../html/backlog.html">
+            <a class="a-standart cursor" href="../html/backlog.html">
                 <img src="../img/backlog.png">
                 <span>Backlog</span>
             </a>
 
-            <a class="a-standart cursor greyhover" href="../html/addtask.html">
+            <a class="a-standart cursor" href="../html/addtask.html">
                 <img src="../img/task.png">
                 <span>Add Task</span>
             </a>
 
-            <a class="a-standart cursor greyhover" href="../html/help.html">
+            <a class="a-standart cursor" href="../html/help.html">
                 <img src="../img/info.png">
                 <span>Help</span>
             </a>
         </div>
 
         <div class="header-footer-links">
-            <a class="a-standart cursor footer-links greyhover" href="../html/impressum.html">Impressum</a>
-            <a class="a-standart cursor footer-links greyhover" href="#">Datenschutz</a>
+            <a class="a-standart cursor footer-links" href="../html/impressum.html">Impressum</a>
+            <a class="a-standart cursor footer-links" href="#">Datenschutz</a>
             <br>
-            <a class="a-standart cursor footer-links greyhover logout" href="../html/index.html"> <img
-                    src="../img/logout.png"> LOG OUT</a>
+            <a class="a-standart cursor footer-links logout" href="../html/index.html"> <img src="../img/logout.png">
+                LOG OUT</a>
         </div>
     </div>
 </header>
-
-<!-- responsive -->
-<!-- <nav>
-    <a href="../html/board.html"><img src="../img/calendar.png"></a>
-    <a href="../html/backlog.html"><img src="../img/backlog.png"></a>
-    <a href="../html/addtask.html"><img src="../img/task.png"></a>
-    <a href="../html/help.html"><img src="../img/info.png"></a>
-  </nav> -->
-
-<!-- <nav class="d-none">
-    <a href="../html/main.html" class="logo"><img src="../img/joinlogo.png"></a>
-    <div class="navigation">
-        <ul class="menu">
-            <div class="close-btn"></div>
-            <li class="menu-item"><a class="sub-btn" href="../html/board.html">Board</a></li>
-            <li class="menu-item"><a href="../html/backlog.html">Backlog</a></li>
-            <li class="menu-item"><a href="../html/addtask.html">Add Task</a></li>
-            <li class="menu-item"><a href="../html/help.html">Help</a></li>
-            <li class="menu-item"><a href="../html/impressum.html">Impressum</a></li>
-            <li class="menu-item"><a href="#">Datenschutz</a></li>
-            <li class="menu-item"><a href="../html/index.html"><img src="../img/logout.png"> LOG OUT</a></li>
-        </ul>
-    </div>
-    <div class="menu-btn"></div>
-</nav> -->

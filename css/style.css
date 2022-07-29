@@ -18,6 +18,10 @@ body {
 }
 
 .d-none {
+    display: none !important;
+}
+
+.hide {
     display: none;
 }
 
@@ -168,6 +172,7 @@ body {
 .join-name h2 {
     margin: 2px;
     color: #5a5050;
+    text-align: center;
 }
 
 .join-name {
@@ -183,6 +188,7 @@ body {
     font-size: 48px;
     filter: drop-shadow(0px 0px 20px  #1211A5);  
     padding: 8px;
+    text-align: center;
 }
 
 .joinSlog {
@@ -217,7 +223,8 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin-top: 24px;
-    margin-right: 54px;
+    margin-right: 27px;
+    margin-left: 27px;
     border-radius: 30px;
     box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
 }
@@ -584,3 +591,105 @@ button:last-child:hover {
     text-decoration: none;
     width: 180px;
   }
+
+
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+    .joinMain {
+        margin-left: 0;
+    }
+
+    .hide {
+        display: flex;
+    }
+
+    .menu-img {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+    }
+
+    .menu-img:hover {
+        cursor: pointer;
+        opacity: 0.5;
+    }
+
+    .resp-menu-header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        display: flex;
+        background: #766b8f70;
+        padding: 8px;
+    } 
+
+    .resp-menu-header img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .header-navbar {
+        display: none;
+    }
+    .resp-menu-links {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        background-color: #7662a2;
+        padding: 26px;
+        z-index: 9999;
+    }
+
+    .resp-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .resp-links a {
+        margin-top: 16px;
+        font-size: 22px;
+        padding: 6px;
+        color: white;
+    }
+
+    .resp-links a:hover {
+        color: #790909;
+        background: #ffffff52;
+        border-radius: 10px;
+    }
+
+    .resp-close-img:hover {
+        cursor: pointer;
+        opacity: 0.5;
+    }
+
+    .flex-column {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 750px) {
+    .joinSection-top, .joinSection-bottom {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 350px) {
+    .joinSection-board, .joinSection-backlog, .joinSection-addtask, .joinSection-help {
+        width: 240px;
+    }
+
+    .join-name h1 {
+        font-size:  36px;
+    }
+
+    .join-name h2 {
+        font-size: 18px;
+    }
+}
+
