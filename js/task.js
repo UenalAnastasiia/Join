@@ -5,6 +5,7 @@ let worker;
 let taskCategory;
 let taskUrgency;
 let taskEmail;
+let board = 'toDo';
 let modal = false;
 let newWorkerWindow = false;
 
@@ -56,7 +57,8 @@ async function generateNewTask(title, category, description, date, urgency, assi
         'urgency': urgency,
         'assignedAccount': assignedAccount,
         'imgName': imgName,
-        'mail': mail
+        'mail': mail,
+        'board': board
     }
     allTasks.push(newTask);
     await backend.setItem('allTasks', JSON.stringify(allTasks));

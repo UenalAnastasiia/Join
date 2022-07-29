@@ -8,7 +8,8 @@
     <title>Join - Board</title>
     <!-- Libraries JavaScript -->
     <script src="../smallest_backend_ever/mini_backend.js"></script>
-    <script src="../js/board.js"></script>
+    <script defer src="../template/boardTemplate.js"></script>
+    <script defer src="../js/board.js"></script>
     <!-- Libraries Style -->
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -26,19 +27,19 @@
     <div class="board">
         <div class="boardContainer">
             <span>TO DO</span>
-            <div id="toDo" class="boardContent"></div>
+            <div ondrop="moveTo('toDo')" id="toDo" class="boardContent"></div>
         </div>
         <div class="boardContainer">
             <span>IN PROGRESS</span>
-            <div id="inProgress" class="boardContent"></div>
+            <div ondrop="moveTo('inProgress')" id="inProgress" class="boardContent"></div>
         </div>
         <div class="boardContainer">
             <span>TESTING</span>
-            <div id="testing" class="boardContent"></div>
+            <div ondrop="moveTo('testing')" id="testing" class="boardContent"></div>
         </div>
         <div class="boardContainer">
             <span>DONE</span>
-            <div id="done" class="boardContent"></div>
+            <div ondrop="moveTo('done')" id="done" class="boardContent"></div>
         </div>
     </div>
 

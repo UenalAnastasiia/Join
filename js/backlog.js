@@ -144,4 +144,3 @@ function categoryBgColors(i) {
   const color = colors[currentCategory]
   document.getElementById(`categoryBgColor${i}`).style.backgroundColor = color;
 }
-
