@@ -3,10 +3,10 @@ setURL('https://gruppe-276.developerakademie.net/smallest_backend_ever');
 let allTasks = [];
 
 const colors = {
-    'Software Development': '#0080006e',
-    'Sale': '#ffa50066',
-    'Product': '#0000ff80',
-    'Marketing': '#ff00005e',
+    'Software Development': 'radial-gradient(rgb(182 227 211), #8bc34a)', 
+    'Sale': 'radial-gradient(#ffeb3b, #ff9800)',
+    'Product': 'radial-gradient(rgb(82 241 255), rgb(3 144 223))',
+    'Marketing': 'radial-gradient(rgb(231 194 191), rgb(201 44 32 / 81%))',
 }
 
 
@@ -39,7 +39,7 @@ function categoryBgColors(i) {
 
 function generateToDoAreaHTML(imgName, i) {
     return /*html*/ `
-                <div class="toDoTaskBox" id="toDoTask${i}">
+                <div class="toDoTaskBox margin-box" id="toDoTask${i}">
                   <div>
                       <div class="toDoTaskHeader">
                         <img class="backlogImg" src="../img/${imgName}.jpg" alt="">

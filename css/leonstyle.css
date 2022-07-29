@@ -14,9 +14,9 @@
   align-items: center;
   flex-direction: column;
   height: 85vh;
-  width: 250px;
+  width: 280px;
   justify-content: center;
-  margin: 0px 8px;
+  margin: 0px 12px;
 }
 
 .boardContainer span {
@@ -31,6 +31,8 @@
   border: 1px solid black;
   border-radius: 4px;
   background-color: #ffffff;
+  overflow-y: overlay;
+  padding-right: 12px;
 }
 
 /* ====== BACKLOG ====== */
@@ -326,6 +328,10 @@ h1 {
   border: 1px solid black;
   box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
   padding: 8px;
+}
+
+.margin-box {
+  margin-left: 16px;
 }
 
 .toDoTaskBox:hover {
