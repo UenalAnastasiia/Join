@@ -8,8 +8,8 @@
     <title>Join - Board</title>
     <!-- Libraries JavaScript -->
     <script src="../smallest_backend_ever/mini_backend.js"></script>
-    <script defer src="../template/boardTemplate.js"></script>
     <script defer src="../js/board.js"></script>
+    <script defer src="../template/boardTemplate.js"></script>
     <!-- Libraries Style -->
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -27,19 +27,19 @@
     <div class="board">
         <div class="boardContainer">
             <span>TO DO</span>
-            <div ondrop="moveTo('toDo')" id="toDo" class="boardContent"></div>
+            <div ondrop="moveTo('toDo')" ondragover="allowDrop(event)" id="toDo" class="boardContent"></div>
         </div>
         <div class="boardContainer">
             <span>IN PROGRESS</span>
-            <div ondrop="moveTo('inProgress')" id="inProgress" class="boardContent"></div>
+            <div ondrop="moveTo('inProgress')" ondragover="allowDrop(event)" id="inProgress" class="boardContent"></div>
         </div>
         <div class="boardContainer">
             <span>TESTING</span>
-            <div ondrop="moveTo('testing')" id="testing" class="boardContent"></div>
+            <div ondrop="moveTo('testing')" ondragover="allowDrop(event)" id="testing" class="boardContent"></div>
         </div>
         <div class="boardContainer">
             <span>DONE</span>
-            <div ondrop="moveTo('done')" id="done" class="boardContent"></div>
+            <div ondrop="moveTo('done')" ondragover="allowDrop(event)" id="done" class="boardContent"></div>
         </div>
     </div>
 

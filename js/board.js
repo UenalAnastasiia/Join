@@ -20,25 +20,28 @@ async function init() {
     renderBoardInProgress();
     renderBoardTesting();
     renderBoardDone();
-    // categoryBgColors();
 }
 
 
 function renderBoardToDo() {
     let toDo  = allTasks.filter(a => a['board'] == 'toDo');
-    toDoArea = document.getElementById('toDo').innerHTML = '';
+    let toDoArea = document.getElementById('toDo')
+    toDoArea.innerHTML = '';
     for (let i = 0; i < toDo.length; i++) {
         let imgName = toDo[i].imgName;
         toDoArea.innerHTML += generateToDoAreaHTML(imgName, i);
+        categoryBgColors(i);
     }
 }
 
 function renderBoardInProgress() {
     let inProgress  = allTasks.filter(a => a.board == 'inProgress');
-    let inProgressArea = document.getElementById('inProgress').innerHTML = '';
+    let inProgressArea = document.getElementById('inProgress');
+    inProgressArea.innerHTML = '';
     for (let i = 0; i < inProgress.length; i++) {
         let imgName = inProgress[i].imgName;
         inProgressArea.innerHTML += generateInProgressAreaHTML(imgName, i);
+        categoryBgColors(i);
     }
 }
 
@@ -49,6 +52,7 @@ function renderBoardTesting() {
     for (let i = 0; i < testing.length; i++) {
         let imgName = testing[i].imgName;
         testingArea.innerHTML += generateTestingAreaHTML(imgName, i);
+        categoryBgColors(i);
     }
 }
 
@@ -59,24 +63,24 @@ function renderBoardDone() {
     for (let i = 0; i < done.length; i++) {
         let imgName = done[i].imgName;
         doneArea.innerHTML += generateDoneAreaHTML(imgName, i);
+        categoryBgColors(i);
     }
 }
 
-
-// function categoryBgColors() {
-//     for(let i = 0; allTasks.length; i++) {
-//         const currentCategory = allTasks[i].category;
-//         const color = colors[currentCategory]
-//         document.getElementById(`toDoTask${i}`).style.background = color;
-//     }
-// }
+function categoryBgColors(i) {
+        const currentCategory = allTasks[i].category;
+        const color = colors[currentCategory]
+        document.getElementById(`toDoTask${i}`).style.background = color;
+}
 
 function startDragging(i) {
     currentDraggedElement = i;
 }
 
-function moveTo(category) {
-    allTasks[currentDraggedElement]['category'] = category;
+async function moveTo(board) {
+    allTasks[currentDraggedElement].board = board;
+    await backend.deleteItem('allTasks'); 
+    await backend.setItem('allTasks', JSON.stringify(allTasks));
     init();
 }
 
