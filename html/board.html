@@ -27,21 +27,22 @@
     <div class="board">
         <div class="boardContainer">
             <span>TO DO</span>
-            <div ondrop="moveTo('toDo')" ondragover="allowDrop(event)" id="toDo" class="boardContent"></div>
+            <div ondrop="moveTo('toDo')" ondragleave="removeHighlight('toDo')" ondragover="allowDrop(event); highlight('toDo')" id="toDo" class="boardContent"></div>
         </div>
         <div class="boardContainer">
             <span>IN PROGRESS</span>
-            <div ondrop="moveTo('inProgress')" ondragover="allowDrop(event)" id="inProgress" class="boardContent"></div>
+            <div ondrop="moveTo('inProgress')" ondragleave="removeHighlight('inProgress')" ondragover="allowDrop(event); highlight('inProgress')" id="inProgress" class="boardContent"></div>
         </div>
         <div class="boardContainer">
             <span>TESTING</span>
-            <div ondrop="moveTo('testing')" ondragover="allowDrop(event)" id="testing" class="boardContent"></div>
+            <div ondrop="moveTo('testing')" ondragleave="removeHighlight('testing')" ondragover="allowDrop(event); highlight('testing')" id="testing" class="boardContent"></div>
         </div>
         <div class="boardContainer">
             <span>DONE</span>
-            <div ondrop="moveTo('done')" ondragover="allowDrop(event)" id="done" class="boardContent"></div>
+            <div ondrop="moveTo('done')" ondragleave="removeHighlight('done')" ondragover="allowDrop(event); highlight('done')" id="done" class="boardContent"></div>
         </div>
     </div>
+    <div class="openTaskBoardContainer d-none" id="openTaskBoard"></div>
 
 
 <!-- Load Navigationsbar -->    

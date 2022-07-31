@@ -1,6 +1,6 @@
 function generateToDoAreaHTML(imgName, element) {
     return /*html*/ `
-                <div draggable="true" ondragstart="startDragging(${element.id})" class="toDoTaskBox margin-box" id="toDoTask${element.id}">
+                <div onclick="openTaskBoard(${element.id})" draggable="true" ondragstart="startDragging(${element.id})" class="toDoTaskBox margin-box" id="toDoTask${element.id}">
                   <div>
                       <div class="toDoTaskHeader">
                         <img class="backlogImg" src="../img/${imgName}.jpg" alt="">
@@ -18,7 +18,7 @@ function generateToDoAreaHTML(imgName, element) {
 
 function generateInProgressAreaHTML(imgName, element) {
     return /*html*/ `
-                <div draggable="true" ondragstart="startDragging(${element.id})" class="toDoTaskBox margin-box" id="toDoTask${element.id}">
+                <div onclick="openTaskBoard(${element.id})" draggable="true" ondragstart="startDragging(${element.id})" class="toDoTaskBox margin-box" id="toDoTask${element.id}">
                   <div>
                       <div class="toDoTaskHeader">
                         <img class="backlogImg" src="../img/${imgName}.jpg" alt="">
@@ -36,7 +36,7 @@ function generateInProgressAreaHTML(imgName, element) {
 
 function generateTestingAreaHTML(imgName, element) {
     return /*html*/ `
-                <div draggable="true" ondragstart="startDragging(${element.id})" class="toDoTaskBox margin-box" id="toDoTask${element.id}">
+                <div onclick="openTaskBoard(${element.id})" draggable="true" ondragstart="startDragging(${element.id})" class="toDoTaskBox margin-box" id="toDoTask${element.id}">
                   <div>
                       <div class="toDoTaskHeader">
                         <img class="backlogImg" src="../img/${imgName}.jpg" alt="">
@@ -54,7 +54,7 @@ function generateTestingAreaHTML(imgName, element) {
 
 function generateDoneAreaHTML(imgName, element) {
     return /*html*/ `
-                <div draggable="true" ondragstart="startDragging(${element.id})" class="toDoTaskBox margin-box" id="toDoTask${element.id}">
+                <div onclick="openTaskBoard(${element.id})" draggable="true" ondragstart="startDragging(${element.id})" class="toDoTaskBox margin-box" id="toDoTask${element.id}">
                   <div>
                       <div class="toDoTaskHeader">
                         <img class="backlogImg" src="../img/${imgName}.jpg" alt="">
@@ -69,3 +69,14 @@ function generateDoneAreaHTML(imgName, element) {
               </div>
               `;
 }
+
+function generateOpenTaskHTML(imgName, element) {
+  return /*html*/ `
+              <div class="openTaskBoardContent">
+              <img onclick="closeOpenTaskBoard()" class="boardBackIcon" src="../img/back.png">
+                  <div class="openTaskLeft"></div>
+                  <div class="openTaskRight"></div>
+              </div>
+            `;
+}
+

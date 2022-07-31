@@ -55,10 +55,10 @@ function openDetails(i) {
 
 
 function closeDetails() {
-  let showDetails = document.getElementById("backlogDetailsContainer");
-  let showDetailsContainer = document.getElementById('backlogOpenDetails');
-  showDetailsContainer.innerHTML = '';
-  showDetails.classList.add("d-none");
+  let showBacklogDetails = document.getElementById("backlogDetailsContainer");
+  let showBacklogDetailsContainer = document.getElementById('backlogOpenDetails');
+  showBacklogDetailsContainer.innerHTML = '';
+  showBacklogDetails.classList.add("d-none");
 }
 
 
