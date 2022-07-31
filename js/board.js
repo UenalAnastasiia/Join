@@ -28,9 +28,10 @@ function renderBoardToDo() {
     let toDoArea = document.getElementById('toDo')
     toDoArea.innerHTML = '';
     for (let i = 0; i < toDo.length; i++) {
+        let element = toDo[i];
         let imgName = toDo[i].imgName;
-        toDoArea.innerHTML += generateToDoAreaHTML(imgName, i);
-        categoryBgColors(i);
+        toDoArea.innerHTML += generateToDoAreaHTML(imgName, element);
+        categoryBgColors(element);
     }
 }
 
@@ -39,9 +40,10 @@ function renderBoardInProgress() {
     let inProgressArea = document.getElementById('inProgress');
     inProgressArea.innerHTML = '';
     for (let i = 0; i < inProgress.length; i++) {
+        let element = inProgress[i];
         let imgName = inProgress[i].imgName;
-        inProgressArea.innerHTML += generateInProgressAreaHTML(imgName, i);
-        categoryBgColors(i);
+        inProgressArea.innerHTML += generateInProgressAreaHTML(imgName, element);
+        categoryBgColors(element);
     }
 }
 
@@ -50,9 +52,10 @@ function renderBoardTesting() {
     let testingArea = document.getElementById('testing');
     testingArea.innerHTML = '';
     for (let i = 0; i < testing.length; i++) {
+        let element = testing[i];
         let imgName = testing[i].imgName;
-        testingArea.innerHTML += generateTestingAreaHTML(imgName, i);
-        categoryBgColors(i);
+        testingArea.innerHTML += generateTestingAreaHTML(imgName, element);
+        categoryBgColors(element);
     }
 }
 
@@ -61,20 +64,21 @@ function renderBoardDone() {
     let doneArea = document.getElementById('done');
     doneArea.innerHTML = '';
     for (let i = 0; i < done.length; i++) {
+        let element = done[i];
         let imgName = done[i].imgName;
-        doneArea.innerHTML += generateDoneAreaHTML(imgName, i);
-        categoryBgColors(i);
+        doneArea.innerHTML += generateDoneAreaHTML(imgName, element);
+        categoryBgColors(element);
     }
 }
 
-function categoryBgColors(i) {
-        const currentCategory = allTasks[i].category;
+function categoryBgColors(element) {
+        const currentCategory = element.category;
         const color = colors[currentCategory]
-        document.getElementById(`toDoTask${i}`).style.background = color;
+        document.getElementById(`toDoTask${element.id}`).style.background = color;
 }
 
-function startDragging(i) {
-    currentDraggedElement = i;
+function startDragging(id) {
+    currentDraggedElement = id;
 }
 
 async function moveTo(board) {

@@ -1,69 +1,69 @@
-function generateToDoAreaHTML(imgName, i) {
+function generateToDoAreaHTML(imgName, element) {
     return /*html*/ `
-                <div draggable="true" ondragstart="startDragging(${i})" class="toDoTaskBox margin-box" id="toDoTask${i}">
+                <div draggable="true" ondragstart="startDragging(${element.id})" class="toDoTaskBox margin-box" id="toDoTask${element.id}">
                   <div>
                       <div class="toDoTaskHeader">
                         <img class="backlogImg" src="../img/${imgName}.jpg" alt="">
-                        <span id="backlog-title" title="${allTasks[i]["assignedAccount"]}">${allTasks[i]["assignedAccount"]}</span>
+                        <span id="backlog-title" title="${element["assignedAccount"]}">${element["assignedAccount"]}</span>
                       </div>
                       <div class="toDoTaskTitle">
-                          <span>Task: ${allTasks[i]["title"]}</span>
-                          <span>Deadline: ${allTasks[i]["date"]}</span>
-                          <span>Description: ${allTasks[i]["description"]}</span>
+                          <span>Task: ${element["title"]}</span>
+                          <span>Deadline: ${element["date"]}</span>
+                          <span>Description: ${element["description"]}</span>
                       </div>
                   </div>
               </div>
               `;
 }
 
-function generateInProgressAreaHTML(imgName, i) {
+function generateInProgressAreaHTML(imgName, element) {
     return /*html*/ `
-                <div draggable="true" ondragstart="startDragging(${i})" class="toDoTaskBox margin-box" id="toDoTask${i}">
+                <div draggable="true" ondragstart="startDragging(${element.id})" class="toDoTaskBox margin-box" id="toDoTask${element.id}">
                   <div>
                       <div class="toDoTaskHeader">
                         <img class="backlogImg" src="../img/${imgName}.jpg" alt="">
-                        <span id="backlog-title" title="${allTasks[i]["assignedAccount"]}">${allTasks[i]["assignedAccount"]}</span>
+                        <span id="backlog-title" title="${element["assignedAccount"]}">${element["assignedAccount"]}</span>
                       </div>
                       <div class="toDoTaskTitle">
-                          <span>Task: ${allTasks[i]["title"]}</span>
-                          <span>Deadline: ${allTasks[i]["date"]}</span>
-                          <span>Description: ${allTasks[i]["description"]}</span>
+                          <span>Task: ${element["title"]}</span>
+                          <span>Deadline: ${element["date"]}</span>
+                          <span>Description: ${element["description"]}</span>
                       </div>
                   </div>
               </div>
               `;
 }
 
-function generateTestingAreaHTML(imgName, i) {
+function generateTestingAreaHTML(imgName, element) {
     return /*html*/ `
-                <div draggable="true" ondragstart="startDragging(${i})" class="toDoTaskBox margin-box" id="toDoTask${i}">
+                <div draggable="true" ondragstart="startDragging(${element.id})" class="toDoTaskBox margin-box" id="toDoTask${element.id}">
                   <div>
                       <div class="toDoTaskHeader">
                         <img class="backlogImg" src="../img/${imgName}.jpg" alt="">
-                        <span id="backlog-title" title="${allTasks[i]["assignedAccount"]}">${allTasks[i]["assignedAccount"]}</span>
+                        <span id="backlog-title" title="${element["assignedAccount"]}">${element["assignedAccount"]}</span>
                       </div>
                       <div class="toDoTaskTitle">
-                          <span>Task: ${allTasks[i]["title"]}</span>
-                          <span>Deadline: ${allTasks[i]["date"]}</span>
-                          <span>Description: ${allTasks[i]["description"]}</span>
+                          <span>Task: ${element["title"]}</span>
+                          <span>Deadline: ${element["date"]}</span>
+                          <span>Description: ${element["description"]}</span>
                       </div>
                   </div>
               </div>
               `;
 }
 
-function generateDoneAreaHTML(imgName, i) {
+function generateDoneAreaHTML(imgName, element) {
     return /*html*/ `
-                <div draggable="true" ondragstart="startDragging(${i})" class="toDoTaskBox margin-box" id="toDoTask${i}">
+                <div draggable="true" ondragstart="startDragging(${element.id})" class="toDoTaskBox margin-box" id="toDoTask${element.id}">
                   <div>
                       <div class="toDoTaskHeader">
                         <img class="backlogImg" src="../img/${imgName}.jpg" alt="">
-                        <span id="backlog-title" title="${allTasks[i]["assignedAccount"]}">${allTasks[i]["assignedAccount"]}</span>
+                        <span id="backlog-title" title="${element["assignedAccount"]}">${element["assignedAccount"]}</span>
                       </div>
                       <div class="toDoTaskTitle">
-                          <span>Task: ${allTasks[i]["title"]}</span>
-                          <span>Deadline: ${allTasks[i]["date"]}</span>
-                          <span>Description: ${allTasks[i]["description"]}</span>
+                          <span>Task: ${element["title"]}</span>
+                          <span>Deadline: ${element["date"]}</span>
+                          <span>Description: ${element["description"]}</span>
                       </div>
                   </div>
               </div>
