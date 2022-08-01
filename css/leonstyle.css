@@ -382,11 +382,51 @@ h1 {
   padding: 8px;
 }
 
+.openTaskBoardLeftRight {
+  display: flex;
+  height: calc(100% - 50px);
+}
+
 .openTaskLeft {
-  width: calc(100% - 30%);
-  height: calc(100% - 52px);
-  margin-left: auto;
-  border-left: 1px dashed black;
+  width: 400px;
+  height: auto;
+  margin: 0;
+  border-right: 1px dashed black;
+}
+
+.openTaskLeftImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.openTaskLeftImg img {
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.openTaskLeftWorker {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 8px 8px 0 0;
+  box-sizing: border-box;
+}
+
+.openTaskLeftWorkerSize {
+  display: flex;
+  width: 100%;
+}
+
+.openTaskLeftWorkerSize span:first-child {
+  min-width: 100px;
+}
+
+.openTaskLeftWorkerSize span:last-child {
+  min-width: 200px;
 }
 
 .boardBackIcon {
