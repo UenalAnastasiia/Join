@@ -19,6 +19,7 @@ async function init() {
   console.log(allTasks);
 }
 
+
 /**
  * Load the calendar in Add-Task-Form with min date current day
  */
@@ -26,6 +27,7 @@ function loadDate() {
   let currentDay = new Date().toISOString().split("T")[0];
   document.getElementById("taskDate").setAttribute("min", currentDay);
 }
+
 
 /**
  * Create a new Task with Date from the Task-Form and push the task in JSON-Array
@@ -39,31 +41,14 @@ function createTask() {
   let assignedAccount = worker || "";
   let imgName = assignedAccount.split(" ").slice(0, 1).join("");
   let mail = taskEmail;
-  generateNewTask(
-    title,
-    category,
-    description,
-    date,
-    urgency,
-    assignedAccount,
-    imgName,
-    mail
-  );
+  generateNewTask(title, category, description, date, urgency, assignedAccount, imgName, mail);
 }
+
 
 /**
  * Generate a Task, push the task in JSON-Array and clean the task-form
  */
-async function generateNewTask(
-  title,
-  category,
-  description,
-  date,
-  urgency,
-  assignedAccount,
-  imgName,
-  mail
-) {
+async function generateNewTask(title, category, description, date, urgency, assignedAccount, imgName, mail) {
   let newTask = {
     title: title,
     category: category,
@@ -83,6 +68,7 @@ async function generateNewTask(
   init();
 }
 
+
 function setTaskId() {
   let i = 0;
   allTasks.map((n) => {
@@ -90,6 +76,7 @@ function setTaskId() {
     i++;
   });
 }
+
 
 function chooseAssignedAccount(position, name, email) {
   workerBorder = document.getElementById("worker-" + position);
@@ -102,15 +89,18 @@ function chooseAssignedAccount(position, name, email) {
   taskEmail = email;
 }
 
+
 function chooseCategory(position, name) {
   document.getElementById("category-" + position).style.background = "grey";
   taskCategory = name;
 }
 
+
 function chooseUrgency(position, name) {
   document.getElementById("urgency-" + position).style.background = "grey";
   taskUrgency = name;
 }
+
 
 /* Show a Modal Popup Box when a task was created */
 function showPopUpWindow() {
@@ -122,6 +112,7 @@ function showPopUpWindow() {
     modal = false;
   }
 }
+
 
 function cleanTaskForm() {
   document.getElementById("taskTitle").value = "";

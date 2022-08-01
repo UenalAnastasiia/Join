@@ -91,7 +91,7 @@ function closeOpenTaskBoard() {
     openTask.classList.add('d-none');
 }
 
-async function moveTo(board) {
+async function moveTo(board) {  
   allTasks[currentDraggedElement].board = board;
   await backend.deleteItem("allTasks");
   await backend.setItem("allTasks", JSON.stringify(allTasks));

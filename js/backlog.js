@@ -1,10 +1,12 @@
 "use strict";
 
 let allTasks = [];
+let taskIds = [];
 let taskCategoryBacklog;
 let taskUrgencyBacklog;
 let worker;
 let taskEmail;
+let board = "toDo";
 
 const colors = {
   'Software Development': 'green',
@@ -17,6 +19,7 @@ setURL('https://gruppe-276.developerakademie.net/smallest_backend_ever');
 
 async function init() {
     loadNavBar();
+    setTaskId();
     await downloadFromServer();
     allTasks = JSON.parse(backend.getItem('allTasks'));
     console.log(allTasks); 
@@ -37,6 +40,14 @@ function renderBacklog() {
         categoryBgColors(i);
       }
     }
+}
+
+function setTaskId() {
+  let i = 0;
+  allTasks.map((n) => {
+    n["id"] = i;
+    i++;
+  });
 }
 
 async function deleteTask(i) {
@@ -98,7 +109,8 @@ async function pushEditContent(title, description, category, date, urgency, assi
     'urgency': urgency,
     'assignedAccount': assignedAccount,
     'imgName': imgName,
-    'mail': mail
+    'mail': mail,
+    'board': board
   }
   afterPushEditContent(newTask, i);
 }
@@ -107,6 +119,7 @@ async function afterPushEditContent(newTask, i) {
   await backend.deleteItem('allTasks'); 
   allTasks.splice(i, 1)
   allTasks.push(newTask); 
+  setTaskId();
   await backend.setItem('allTasks', JSON.stringify(allTasks));
   init();
   clearOpenDetailTasks();
