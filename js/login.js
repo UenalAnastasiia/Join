@@ -1,6 +1,4 @@
-"use strict"
-
-/* 
+/** 
  * Login to Join
  */
 const loginForm = document.getElementById("login-form");
@@ -27,7 +25,7 @@ loginButton.addEventListener("click", (e) => {
 })
 
 
-/* 
+/** 
  * Show Modal Window after Login
  */
 function toggleModal() {
@@ -46,9 +44,9 @@ function openJoin() {
 }
 
 
-/* 
+/** 
  * Load Page Transition
  */
 window.addEventListener('beforeunload', () => {
     document.body.classList.add("animate-out");
-  });
+});

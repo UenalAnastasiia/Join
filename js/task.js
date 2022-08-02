@@ -60,6 +60,11 @@ async function generateNewTask(title, category, description, date, urgency, assi
     mail: mail,
     board: board,
   };
+  renderTask(newTask)
+}
+
+
+async function renderTask(newTask) {
   allTasks.push(newTask);
   setTaskId();
   await backend.setItem("allTasks", JSON.stringify(allTasks));
@@ -69,6 +74,9 @@ async function generateNewTask(title, category, description, date, urgency, assi
 }
 
 
+/** 
+ * Every task became an ID (for drag and drop function in board)
+ */
 function setTaskId() {
   let i = 0;
   allTasks.map((n) => {
@@ -102,7 +110,9 @@ function chooseUrgency(position, name) {
 }
 
 
-/* Show a Modal Popup Box when a task was created */
+/**
+ * Show a Modal Popup Box when a task was created 
+ */
 function showPopUpWindow() {
   if (modal === false) {
     document.getElementById("popUpBox").style.display = "block";
