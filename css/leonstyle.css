@@ -320,6 +320,8 @@ h1 {
 /* Board */
 .toDoTaskBox {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 6px;
   border: 1px solid black;
   box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
@@ -331,7 +333,7 @@ h1 {
   margin-left: 16px;
 }
 
-.toDoTaskBox:hover {
+.onclickOpenTaskBoard:hover {
   cursor: pointer;
   opacity: 0.7;
 }
@@ -355,6 +357,32 @@ h1 {
 
 .toDoTaskTitle span {
   font-size: 16px;
+}
+
+.deleteBtn {
+  width: 32px;
+  height: 32px;
+}
+
+.deleteBtn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 125ms ease-in-out;
+}
+
+.toastContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  background-color: darkgreen;
+  z-index: 9999;
+  padding: 4px 32px;
+  border-radius: 6px;
+  color: white;
 }
 
 .dragoverHighlight {
@@ -394,6 +422,10 @@ h1 {
   border-right: 1px dashed black;
 }
 
+.openTaskRight {
+  overflow: hidden;
+}
+
 .openTaskLeftImg {
   display: flex;
   justify-content: center;
@@ -405,28 +437,39 @@ h1 {
   height: 300px;
   object-fit: cover;
   border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.openTaskLeftWorker {
+.openTaskLeftContact {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 8px 8px 0 0;
+  margin: 0 8px 0 0;
   box-sizing: border-box;
 }
 
-.openTaskLeftWorkerSize {
+.openTaskLeftContact ul {
+  list-style: none;
+}
+
+.openTaskLeftContact ul li {
   display: flex;
-  width: 100%;
+  align-items: center;
+  list-style: none;
 }
 
-.openTaskLeftWorkerSize span:first-child {
-  min-width: 100px;
+.gif img {
+  width: 24px;
+  margin-right: 12px;
 }
 
-.openTaskLeftWorkerSize span:last-child {
-  min-width: 200px;
+.openTaskRight div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 12px;
 }
 
 .boardBackIcon {

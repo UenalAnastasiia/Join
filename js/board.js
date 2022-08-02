@@ -3,6 +3,8 @@ setURL("https://gruppe-276.developerakademie.net/smallest_backend_ever");
 let allTasks = [];
 let currentDraggedElement;
 
+const toastAlert = document.getElementById("toastAlert");
+
 const colors = {
   "Software Development": "radial-gradient(rgb(182 227 211), #8bc34a)",
   Sale: "radial-gradient(#ffeb3b, #ff9800)",
@@ -79,19 +81,46 @@ function startDragging(id) {
   currentDraggedElement = id;
 }
 
+async function deleteBoardTask(element) {
+  await backend.deleteItem("allTasks");
+  allTasks.splice(element, 1);
+  setTaskId();
+  await backend.setItem("allTasks", JSON.stringify(allTasks));
+  await init();
+  toast();
+}
+
+function toast() {
+  let test = document.getElementById('toDo');
+  test.innerHTML += toastHTML();
+  setTimeout(function() {clearToast()}, 3000);
+}
+ function clearToast() {
+  let test2 = document.getElementById('toastContainer');
+  test2.classList.add('d-none');
+ }
+
+function setTaskId() {
+  let i = 0;
+  allTasks.map((n) => {
+    n["id"] = i;
+    i++;
+  });
+}
+
 function openTaskBoard(element) {
-    let openTask = document.getElementById('openTaskBoard');
-    openTask.classList.remove('d-none');
-    let imgName = allTasks[element].imgName;
-    openTask.innerHTML = generateOpenTaskHTML(imgName, element);
+  let openTask = document.getElementById("openTaskBoard");
+  openTask.classList.remove("d-none");
+  let imgName = allTasks[element].imgName;
+  openTask.innerHTML = generateOpenTaskHTML(imgName, element);
 }
 
 function closeOpenTaskBoard() {
-    let openTask = document.getElementById('openTaskBoard');
-    openTask.classList.add('d-none');
+  let openTask = document.getElementById("openTaskBoard");
+  openTask.classList.add("d-none");
 }
 
-async function moveTo(board) {  
+async function moveTo(board) {
   allTasks[currentDraggedElement].board = board;
   await backend.deleteItem("allTasks");
   await backend.setItem("allTasks", JSON.stringify(allTasks));
