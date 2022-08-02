@@ -110,3 +110,10 @@ function highlight(id) {
 function removeHighlight(id) {
   document.getElementById(id).classList.remove("dragoverHighlight");
 }
+
+async function deleteTask(i) {
+  await backend.deleteItem('allTasks'); 
+  allTasks.splice(i, 1)
+  await backend.setItem('allTasks', JSON.stringify(allTasks));
+  init();
+}

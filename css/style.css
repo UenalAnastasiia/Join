@@ -309,6 +309,8 @@ form {
 .taskForm-right {
     display: flex;
     flex-direction: column;
+    margin-right: 40px;
+    margin-left: 20px;
 }
 
 .taskForm-left textarea {
@@ -354,6 +356,8 @@ form {
     align-items: center;
     margin-top: 16px;
     padding-left: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .add-user-box {
@@ -382,10 +386,14 @@ form {
     min-width: 150px;
     max-width: 200px;
     margin-right: 10px;
+    margin-top: 12px;
     padding: 6px;
     border: 1px solid white;
     border-radius: 10px;
     background: #ffffff59;
+    max-height: 140px;
+    overflow-x: overlay;
+    overflow-y: overlay;
 }
 
 .taskAccount-box:hover {
@@ -595,6 +603,21 @@ button:last-child:hover {
 
 
 /* Responsive */
+
+@media (max-width: 1200px) {
+    .taskForm {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+    .input-taskform, select {
+        width: 350px;
+    }
+
+    .list-choice-title, .list-choice input[type="radio"] + span, .taskForm-description textarea, .taskForm-assigned, .taskForm h3 {
+        max-width: 370px;
+    }
+}
 
 @media (max-width: 1000px) {
     .joinMain {
