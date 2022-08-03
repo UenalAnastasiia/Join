@@ -17,8 +17,8 @@ function generateBacklogAreaHTML(emailBacklog, imgName, i) {
                     </div>
                     <div class="details">
                         <button class="detailsBtn" onclick="openDetails(${i})">Details lesen</button>
+                        <button class="deleteTaskBtn" onclick="deleteTask(${i})">Delete</button>
                     </div>
-                    <button class="deleteTaskBtn" onclick="deleteTask(${i})">Delete</button>
                 </div>
             </div>`;
 }
@@ -139,3 +139,12 @@ function openDetailsHTML(i) {
             </div>
     </div> `;
 }
+
+function toastHTML() {
+    return /*html*/ `
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toastContainer">
+       <strong>Success</strong>
+       Your task has been edited!
+    </div>`;
+  }

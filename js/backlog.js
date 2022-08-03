@@ -124,6 +124,7 @@ async function afterPushEditContent(newTask, i) {
   init();
   clearOpenDetailTasks();
   closeDetails();
+  toast();
 }
 
 function clearOpenDetailTasks() {
@@ -132,6 +133,16 @@ function clearOpenDetailTasks() {
   worker = undefined;
   taskEmail = undefined;
 }
+
+function toast() {
+  let test = document.getElementById('backlog');
+  test.innerHTML += toastHTML();
+  setTimeout(function() {clearToast()}, 3000);
+}
+ function clearToast() {
+  let test2 = document.getElementById('toastContainer');
+  test2.classList.add('d-none');
+ }
  
 function chooseCategoryBacklog(name) {
     taskCategoryBacklog = name;
