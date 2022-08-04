@@ -13,9 +13,18 @@
     .list-choice-title, .list-choice input[type="radio"] + span, .taskForm-description textarea, .taskForm-assigned, .taskForm h3 {
         max-width: 370px;
     }
+
+    .taskForm-right {
+        margin-left: -50px;
+        margin-right: -10px;
+    }
+
+    .taskForm-left {
+        margin-left: 10px;
+    }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
     .joinMain {
         margin-left: 0;
     }
@@ -89,6 +98,36 @@
     .flex-column {
         display: flex;
         flex-direction: column;
+    }
+    .addtaskContainer {
+        margin-left: 0;
+    }
+
+    .addtaskHeader {
+        margin-top: 60px;
+    }
+}
+
+@media (max-width: 850px) {
+    form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .taskForm-right {
+        margin-left: 20px;
+    }
+
+    .list-choice-title, .list-choice input[type="radio"] + span, .taskForm-description textarea, .taskForm-assigned, .taskForm h3 {
+        max-width: 450px;
+    }
+
+    .input-taskform {
+        width: 400px;
+    }
+
+    .taskForm-buttons {
+        justify-content: center;
     }
 }
 
