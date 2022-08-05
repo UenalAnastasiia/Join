@@ -2,7 +2,7 @@ function generateBacklogAreaHTML(emailBacklog, imgName, i) {
   return /*html*/ `
               <div class="backlogContainerContent">
                 <div class="backlogContent">
-                    <div class="assignedTo">
+                    <div id="assignedTo${i}" class="assignedTo">
                         <div id="categoryBgColor${i}" class="categoryBgColor"></div>
                         <div>
                             <img class="backlogImg" src="../img/${imgName}.jpg" alt="">
@@ -144,11 +144,20 @@ function openDetailsHTML(i) {
     </div> `;
 }
 
-function toastHTML() {
+function toastEditHTML() {
     return /*html*/ `
     <!-- Toast Container -->
-    <div id="toastContainer" class="toastContainer">
+    <div id="toastEditContainer" class="toastContainer">
        <strong>Success</strong>
        Your task has been edited!
+    </div>`;
+  }
+
+function toastCopyHTML() {
+    return /*html*/ `
+    <!-- Toast Container -->
+    <div id="toastCopyContainer" class="toastContainer">
+       <strong>Success</strong>
+       Your E-Mail has been copied!
     </div>`;
   }

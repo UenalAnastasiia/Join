@@ -232,6 +232,15 @@
     align-items: center !important;
     width: 100% !important;
   }
+
+  .backlogDeatailsInfoBox {
+    width: 100% !important;
+    margin-left: -50% !important;
+  }
+
+  .list-choice-title {
+    font-size: 17px !important;
+}
 }
 
 @media (max-width: 600px) {

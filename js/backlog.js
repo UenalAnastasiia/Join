@@ -76,7 +76,8 @@ function closeDetails() {
 function clickToCopy(i) {
   let mail = allTasks[i].mail;
   mail.textContent; 
-  navigator.clipboard.writeText(mail); 
+  navigator.clipboard.writeText(mail);
+  toastCopy(); 
 }
 
 function openDetailLoadContent(i) {
@@ -124,7 +125,7 @@ async function afterPushEditContent(newTask, i) {
   init();
   clearOpenDetailTasks();
   closeDetails();
-  toast();
+  toastEditTask();
 }
 
 function clearOpenDetailTasks() {
@@ -134,15 +135,27 @@ function clearOpenDetailTasks() {
   taskEmail = undefined;
 }
 
-function toast() {
-  let test = document.getElementById('backlog');
-  test.innerHTML += toastHTML();
-  setTimeout(function() {clearToast()}, 3000);
+function toastEditTask() {
+  let editToast = document.getElementById('backlog');
+  editToast.innerHTML += toastEditHTML();
+  setTimeout(function() {clearToastEditTask()}, 3000);
 }
- function clearToast() {
-  let test2 = document.getElementById('toastContainer');
-  test2.classList.add('d-none');
- }
+
+function clearToastEditTask() {
+ let editToast = document.getElementById('toastEditContainer');
+ editToast.classList.add('d-none');
+}
+
+function toastCopy() {
+  let toastCopy = document.getElementById('backlog');
+  toastCopy.innerHTML += toastCopyHTML();
+  setTimeout(function() {clearCopyToast()}, 3000);
+}
+
+function clearCopyToast() {
+ let toastCopy = document.getElementById('toastCopyContainer');
+ toastCopy.classList.add('d-none');
+}
  
 function chooseCategoryBacklog(name) {
     taskCategoryBacklog = name;
@@ -167,4 +180,7 @@ function categoryBgColors(i) {
   const currentCategory = allTasks[i].category;
   const color = colors[currentCategory]
   document.getElementById(`categoryBgColor${i}`).style.backgroundColor = color;
+  if(window.innerWidth <= 800) {
+     document.getElementById(`assignedTo${i}`).style = `border-bottom: 1px solid ${color}`;
+  }
 }

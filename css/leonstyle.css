@@ -133,16 +133,26 @@
 
 .detailsBtn {
   cursor: pointer;
-  margin: 0;
-  width: 100%;
-  background-color: #766b8f70;
-  border: 1px solid black;
+    margin: 0;
+    width: 100%;
+    background-color: #766b8f70;
+    border: 1px solid black;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
 }
 
-.detailsBtn:hover,
+.detailsBtn:hover {
+  cursor: pointer;
+  opacity: 0.5;
+  border: 1px solid black !important;
+  border-bottom-left-radius: 8px !important;
+  border-top-left-radius: 8px !important;
+}
+
 .deleteTaskBtn:hover {
   cursor: pointer;
   opacity: 0.5;
+  border: 1px solid black !important;
 }
 
 .backlogImg {
@@ -165,6 +175,11 @@
   width: 24px;
 }
 
+.copy:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
 .backlogDetailsContainer {
   display: flex;
   justify-content: center;
@@ -178,10 +193,11 @@
 }
 
 .backlogDeatailsInfoBox {
-  position: fixed;
+  position: absolute;
   top: 50%;
-  transform: translate(-50%, -50%);
   left: 50%;
+  margin-top: -35vh;
+  margin-left: -35vw;
   border-radius: 8px;
   width: 70vw;
   height: 70vh;
@@ -198,6 +214,10 @@
   cursor: pointer;
   height: 48px;
   object-fit: contain;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 
 .backlogBackIcon:hover {
@@ -233,6 +253,13 @@
 .editBacklog {
   width: 100%;
   margin: 0;
+  padding: 12px 0;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.editBacklog:hover {
+  color: white;
 }
 
 .openDetailContainer input,
