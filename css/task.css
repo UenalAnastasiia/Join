@@ -290,11 +290,12 @@ button:last-child:hover {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 0;
     left: 0;
-    height: 100vh;
-    width: 100vw;
+    top: 0;
+    height: 100%;
+    width: 100%;
     background-color: rgb(203 200 200 / 60%);
+    z-index: 9999;
   }
 
   .popUpWindow {

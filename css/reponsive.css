@@ -1,22 +1,28 @@
-/* Responsive */
-
 @media (max-width: 1200px) {
   .taskForm {
     margin-right: 15px;
     margin-left: 15px;
   }
 
-  .input-taskform,
-  select {
-    width: 350px;
+  .input-taskform, select {
+    width: 310px;
   }
 
   .list-choice-title,
-  .list-choice input[type="radio"] + span,
+  .list-choice input[type="radio"] + span, .list-choice,
   .taskForm-description textarea,
-  .taskForm-assigned,
+  .taskForm-assigned, .taskForm-date, .taskForm-urgency, .taskForm-urgency h3,
   .taskForm h3 {
-    max-width: 370px;
+    max-width: 330px;
+  }
+
+  .taskForm-right {
+    margin-right: 15px;
+    margin-left: -50px;
+  }
+
+  .taskForm-left {
+    margin-left: 15px;
   }
 }
 
@@ -91,6 +97,23 @@
     opacity: 0.5;
   }
 
+  .addtaskContainer, .impressumContainer {
+    margin-left: 0;
+  }
+
+  .addtaskHeader, .impressumHeader {
+    margin-top: 60px;
+  }
+
+  .taskForm {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .impressumHeader, .impressum {
+    margin-left: 12px;
+  }
+
   .flex-column {
     display: flex;
     flex-direction: column;
@@ -128,7 +151,7 @@
 
 }
 
-@media (max-width: 750px) {
+@media (max-width: 800px) {
   .joinSection-top,
   .joinSection-bottom {
     flex-direction: column;
@@ -157,5 +180,23 @@
   
   .openTaskLeftContact ul {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 300px) {
+  .input-taskform, select {
+    width: 180px;
+  }
+
+  .list-choice-title,
+  .list-choice input[type="radio"] + span, .list-choice,
+  .taskForm-description textarea,
+  .taskForm-assigned, .taskForm-date, .taskForm-urgency, .taskForm-urgency h3, .list-choice-objects,
+  .taskForm h3 {
+    max-width: 200px;
+  }
+
+  #login-form p:last-child {
+    margin-left: 15px;
   }
 }

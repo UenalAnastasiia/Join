@@ -21,6 +21,15 @@
 </head>
 
 <body class="animate-in" onload="init(), loadDate()">
+    <div class="popUpBox" id="popUpBox">
+        <div class="popUpWindow">
+            <i class="fas fa-check-circle"></i>
+            <h1>Task done!</h1>
+            <a class="popUpBtn popUpMargin" href="../html/backlog.html">Go to Backlog</a>
+            <a class="popUpBtn" onclick="showPopUpWindow()">Create a new Task</a>
+        </div>
+    </div>
+    
     <div w3-include-html="../html/navbar.html"></div>
 
     <div class="addtaskContainer">
@@ -151,16 +160,8 @@
                         <div id="new-worker-box"></div>
                         <!-- Buttons -->
                         <div class="taskForm-buttons">
-                            <button type="reset" onclick="cleanTaskForm()">CANCEL</button>
-                            <button type="submit">CREATE TASK</button>
-                        </div>
-                        <div id="popUpBox">
-                            <div class="popUpWindow">
-                                <i class="fas fa-check-circle"></i>
-                                <h1>Task done!</h1>
-                                <a class="popUpBtn popUpMargin" href="../html/backlog.html">Go to Backlog</a>
-                                <a class="popUpBtn" onclick="showPopUpWindow()">Create a new Task</a>
-                            </div>
+                            <button class="btn-taskForm" type="reset" onclick="cleanTaskForm()">CANCEL</button>
+                            <button class="btn-taskForm" type="submit">CREATE TASK</button>
                         </div>
                     </div>
                 </div>

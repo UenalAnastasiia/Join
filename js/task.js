@@ -117,6 +117,7 @@ function showPopUpWindow() {
   if (modal === false) {
     document.getElementById("popUpBox").style.display = "block";
     modal = true;
+    window.scrollTo(0, 0);
   } else {
     document.getElementById("popUpBox").style.display = "none";
     modal = false;
