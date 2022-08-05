@@ -8,11 +8,7 @@
     width: 310px;
   }
 
-  .list-choice-title,
-  .list-choice input[type="radio"] + span, .list-choice,
-  .taskForm-description textarea,
-  .taskForm-assigned, .taskForm-date, .taskForm-urgency, .taskForm-urgency h3,
-  .taskForm h3 {
+  .list-choice-title, .list-choice input[type="radio"] + span, .list-choice, .taskForm-description textarea, .taskForm-assigned, .taskForm-date, .taskForm-urgency, .taskForm-urgency h3, .taskForm h3 {
     max-width: 330px;
   }
 
@@ -63,6 +59,7 @@
   .header-navbar {
     display: none;
   }
+
   .resp-menu-links {
     position: absolute;
     top: 0;
@@ -121,52 +118,119 @@
 
   .backlog {
     width: auto !important;
-    margin: 70px 12px 0 12px !important;
-  }
-
-  .board {
-    width: auto !important;
-    margin: 70px 0 0 0;
-  }
-
-  .openTaskBoardLeftRight {
-    width: 100% !important;
-    flex-direction: column !important;
-    overflow: auto !important;
-  }
-
-  .openTaskLeft {
-    width: unset !important;
-    border-right: none !important;
-  }
-  
-  .openTaskLeftContact {
-    border-bottom: 1px dashed black !important;
-  }
-
-  .openTaskRight {
-    overflow: unset !important;
-    border: 1px ;
+    margin: 0 12px !important;
   }
 
 }
 
 @media (max-width: 800px) {
-  .joinSection-top,
-  .joinSection-bottom {
+  .joinSection-top, .joinSection-bottom {
     flex-direction: column;
   }
+  
+  form {
+    flex-direction: column;
+    align-items: center;
+  }
 
-  .openTaskBoardContent {
-    width: 100% !important;
+  .taskForm {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  .taskForm-right {
+    margin-left: 35px;
+  }
+
+  .taskForm-left {
+    margin-left: 0;
+  }
+
+  .input-taskform, select {
+    width: 400px;
+  }
+
+  .list-choice-title, .list-choice input[type="radio"] + span, .list-choice, .taskForm-description textarea, .taskForm-assigned, .taskForm-date, .taskForm-urgency, .taskForm-urgency h3, .taskForm h3 {
+    max-width: 430px;
+  }
+
+  .taskForm-buttons {
+    justify-content: center;
+  }
+
+  .popUpBox {
+    left: 85px;
+    top: 40%;
+    width: 90vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .input-taskform, select {
+    width: 300px;
+  }
+
+  .list-choice-title, .list-choice input[type="radio"] + span, .list-choice,  .taskForm-description textarea, .taskForm-assigned, .taskForm-date, .taskForm-urgency, .taskForm-urgency h3, .list-choice-objects, .taskForm h3 {
+    max-width: 320px;
+  }
+
+  .taskForm-right {
+    margin-left: 0;
+  }
+
+  .taskForm-description textarea {
+    height: 100px;
+  }
+
+  .popUpWindow {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .popUpBtn {
+    margin-right: 0 !important;
+    margin-bottom: 8px;
+  }
+
+  .taskForm-buttons {
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .taskForm {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .input-taskform, select {
+    width: 250px;
+  }
+
+  .list-choice-title, .list-choice input[type="radio"] + span, .list-choice, .taskForm-description textarea, .taskForm-assigned, .taskForm-date, .taskForm-urgency, .taskForm-urgency h3, .list-choice-objects, .taskForm h3 {
+    max-width: 270px;
+  }
+
+  .login-form-field {
+    width: 150px;
+  }
+}
+
+@media (max-width: 450px) {
+  .input-taskform, select {
+    width: 200px;
+  }
+
+  .list-choice-title, .list-choice input[type="radio"] + span, .list-choice, .taskForm-description textarea, .taskForm-assigned, .taskForm-date, .taskForm-urgency, .taskForm-urgency h3, .list-choice-objects, .taskForm h3 {
+    max-width: 220px;
   }
 }
 
 @media (max-width: 350px) {
-  .joinSection-board,
-  .joinSection-backlog,
-  .joinSection-addtask,
-  .joinSection-help {
+  .joinSection-board, .joinSection-backlog, .joinSection-addtask, .joinSection-help {
     width: 240px;
   }
 
@@ -177,9 +241,17 @@
   .join-name h2 {
     font-size: 18px;
   }
-  
-  .openTaskLeftContact ul {
-    font-size: 14px;
+
+  .popUpWindow {
+    width: 230px;
+  }
+
+  .login-form-field {
+    width: 120px;
+  }
+
+  #login-form-submit {
+    width: 50%;
   }
 }
 
@@ -188,11 +260,7 @@
     width: 180px;
   }
 
-  .list-choice-title,
-  .list-choice input[type="radio"] + span, .list-choice,
-  .taskForm-description textarea,
-  .taskForm-assigned, .taskForm-date, .taskForm-urgency, .taskForm-urgency h3, .list-choice-objects,
-  .taskForm h3 {
+  .list-choice-title, .list-choice input[type="radio"] + span, .list-choice, .taskForm-description textarea, .taskForm-assigned, .taskForm-date, .taskForm-urgency, .taskForm-urgency h3, .list-choice-objects, .taskForm h3 {
     max-width: 200px;
   }
 
