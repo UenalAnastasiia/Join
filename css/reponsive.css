@@ -118,7 +118,42 @@
 
   .backlog {
     width: auto !important;
-    margin: 0 12px !important;
+    margin: 70px 12px 0 12px !important;
+    height: 100% !important;
+  }
+
+  .board {
+    width: 100% !important;
+    margin-top: 70px !important;
+  }
+
+  .toDoTaskTitle span:first-child {
+    max-width: 100px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+    white-space: nowrap;
+  }
+
+  .openTaskLeft {
+    width: 100% !important;
+    border-right: none !important;
+  }
+
+  .openTaskRight {
+    overflow: unset !important;
+  }
+
+  .openTaskBoardLeftRight {
+    flex-direction: column !important;
+  }
+
+  .openTaskLeftContact {
+    border-bottom: 1px dashed black !important;
+  }
+
+  .openTaskBoardContent {
+    overflow: auto;
   }
 
 }
@@ -162,6 +197,40 @@
     left: 85px;
     top: 40%;
     width: 90vw;
+  }
+
+  .backlogContent {
+    height: unset !important;
+    flex-direction: column;
+    justify-content: unset !important;
+    align-items: unset !important;
+  }
+
+  .backlogContainer {
+    display: none !important;
+  }
+
+  .assignedTo {
+    width: 100% !important;
+    border-bottom: 1px solid black;
+    border-bottom-left-radius: 8px !important;
+  }
+
+  .details {
+    width: 100% !important;
+    height: 60px !important;
+  }
+
+  .copySpan {
+    display: flex !important;
+  }
+
+  .marketing {
+    height: 60px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
   }
 }
 
@@ -226,6 +295,14 @@
 
   .list-choice-title, .list-choice input[type="radio"] + span, .list-choice, .taskForm-description textarea, .taskForm-assigned, .taskForm-date, .taskForm-urgency, .taskForm-urgency h3, .list-choice-objects, .taskForm h3 {
     max-width: 220px;
+  }
+
+  .openTaskBoardContent {
+    width: 100% !important;
+  }
+
+  .copySpan {
+    display: none !important;
   }
 }
 

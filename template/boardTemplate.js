@@ -1,7 +1,7 @@
 function generateToDoAreaHTML(imgName, element) {
   return /*html*/ `
                 <div draggable="true" ondragstart="startDragging(${element.id})" class="toDoTaskBox margin-box" id="toDoTask${element.id}">
-                  <div class="onclickOpenTaskBoard" onclick="openTaskBoard(${element.id})">
+                  <div class="onclickOpenTaskBoard">
                       <div class="toDoTaskHeader">
                         <img class="backlogImg" src="../img/${imgName}.jpg" alt=""> 
                         <span id="backlog-title" title="${element["assignedAccount"]}">${element["assignedAccount"]}</span>
@@ -11,7 +11,10 @@ function generateToDoAreaHTML(imgName, element) {
                           <span>Deadline: ${element["date"]}</span>
                       </div>
                   </div>
-                  <img onclick="deleteBoardTask(${element.id})" class="deleteBtn" src="../img/delete.png">
+                  <div class="boardBtnDiv">
+                    <img onclick="deleteBoardTask(${element.id})" class="boardBtn" src="../img/delete.png">
+                    <img onclick="openTaskBoard(${element.id})" class="boardBtn" src="../img/information.png">
+                  </div>
               </div>
               `;
 }

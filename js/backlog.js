@@ -73,10 +73,10 @@ function closeDetails() {
 }
 
 
-function clickToCopy() {
-  let email = document.getElementById("copyEmail").innerText;
-  email.textContent; 
-  navigator.clipboard.writeText(email); 
+function clickToCopy(i) {
+  let mail = allTasks[i].mail;
+  mail.textContent; 
+  navigator.clipboard.writeText(mail); 
 }
 
 function openDetailLoadContent(i) {

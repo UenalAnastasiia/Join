@@ -8,8 +8,12 @@ function generateBacklogAreaHTML(emailBacklog, imgName, i) {
                             <img class="backlogImg" src="../img/${imgName}.jpg" alt="">
                         </div>
                         <div class="assignedToProfile">
-                            <span id="backlog-title" title="Leon Groschek">${allTasks[i]["assignedAccount"]}</span>
-                            <span id="copyEmail" onclick="clickToCopy()" title="Click to copy">${emailBacklog}</span>
+                            <span id="backlog-title" title="${allTasks[i]["assignedAccount"]}">${allTasks[i]["assignedAccount"]}</span>
+                            <span id="copyEmail" title="${emailBacklog}">${emailBacklog}</span>
+                        </div>
+                        <div class="copyDiv">
+                            <img class="copy" onclick="clickToCopy(${i})" src="../img/copy.png">
+                            <span class="copySpan d-none">Copy E-Mail</span>
                         </div>
                     </div>
                     <div class="marketing">
