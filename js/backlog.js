@@ -52,7 +52,8 @@ function setTaskId() {
 
 async function deleteTask(i) {
   await backend.deleteItem('allTasks'); 
-  allTasks.splice(i, 1)
+  allTasks.splice(i, 1);
+  setTaskId();  
   await backend.setItem('allTasks', JSON.stringify(allTasks));
   init();
 }

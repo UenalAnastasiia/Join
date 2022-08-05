@@ -16,6 +16,7 @@ async function init() {
   loadNavBar();
   await downloadFromServer();
   allTasks = JSON.parse(backend.getItem("allTasks"));
+  setTaskId();
   console.log(allTasks);
   renderBoardToDo();
   renderBoardInProgress();

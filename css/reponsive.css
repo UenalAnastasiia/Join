@@ -98,7 +98,32 @@
 
   .backlog {
     width: auto !important;
-    margin: 0 12px !important;
+    margin: 70px 12px 0 12px !important;
+  }
+
+  .board {
+    width: auto !important;
+    margin: 70px 0 0 0;
+  }
+
+  .openTaskBoardLeftRight {
+    width: 100% !important;
+    flex-direction: column !important;
+    overflow: auto !important;
+  }
+
+  .openTaskLeft {
+    width: unset !important;
+    border-right: none !important;
+  }
+  
+  .openTaskLeftContact {
+    border-bottom: 1px dashed black !important;
+  }
+
+  .openTaskRight {
+    overflow: unset !important;
+    border: 1px ;
   }
 
 }
@@ -107,6 +132,10 @@
   .joinSection-top,
   .joinSection-bottom {
     flex-direction: column;
+  }
+
+  .openTaskBoardContent {
+    width: 100% !important;
   }
 }
 
@@ -124,5 +153,9 @@
 
   .join-name h2 {
     font-size: 18px;
+  }
+  
+  .openTaskLeftContact ul {
+    font-size: 14px;
   }
 }
