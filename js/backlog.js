@@ -173,27 +173,23 @@ function clearOpenDetailTasks() {
 function toastEditTask() {
   let editToast = document.getElementById("backlog");
   editToast.innerHTML += toastEditHTML();
-  setTimeout(function () {
-    clearToastEditTask();
-  }, 3000);
+  setTimeout(function () {clearToastEditTask();}, 3000);
 }
 
 function clearToastEditTask() {
   let editToast = document.getElementById("toastEditContainer");
-  editToast.classList.add("d-none");
+  editToast.parentNode.removeChild(editToast);
 }
 
 function toastCopy() {
   let toastCopy = document.getElementById("backlog");
   toastCopy.innerHTML += toastCopyHTML();
-  setTimeout(function () {
-    clearCopyToast();
-  }, 3000);
+  setTimeout(function () {clearCopyToast();}, 3000);
 }
 
 function clearCopyToast() {
   let toastCopy = document.getElementById("toastCopyContainer");
-  toastCopy.classList.add("d-none");
+  toastCopy.parentNode.removeChild(toastCopy);
 }
 
 function chooseCategoryBacklog(name) {

@@ -12,7 +12,7 @@ function generateBacklogAreaHTML(emailBacklog, imgName, i) {
                             <span id="copyEmail" title="${emailBacklog}">${emailBacklog}</span>
                         </div>
                         <div class="copyDiv">
-                            <img class="copy" onclick="clickToCopy(${i})" src="../img/copy.png">
+                            <img class="copy" title="click to copy" onclick="clickToCopy(${i})" src="../img/copy.png">
                             <span class="copySpan d-none">Copy E-Mail</span>
                         </div>
                     </div>
