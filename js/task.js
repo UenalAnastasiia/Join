@@ -87,6 +87,7 @@ function setTaskId() {
 
 
 function chooseAssignedAccount(position, name, email) {
+  workerBorderWhite();
   workerBorder = document.getElementById("worker-" + position);
   if (workerBorder.style.border == "1px solid red") {
     workerBorder.style.border = "1px solid white";
@@ -95,6 +96,13 @@ function chooseAssignedAccount(position, name, email) {
   }
   worker = name;
   taskEmail = email;
+}
+
+
+function workerBorderWhite() {
+  document.getElementById("worker-1").style.border = "1px solid white";
+  document.getElementById("worker-2").style.border = "1px solid white";
+  document.getElementById("worker-3").style.border = "1px solid white";
 }
 
 
@@ -129,8 +137,6 @@ function cleanTaskForm() {
   document.getElementById("taskTitle").value = "";
   document.getElementById("taskDate").value = "";
   document.getElementById("taskDescription").value = "";
-  document.getElementById("worker-1").style.border = "1px solid white";
-  document.getElementById("worker-2").style.border = "1px solid white";
-  document.getElementById("worker-3").style.border = "1px solid white";
+  workerBorderWhite();
   init();
 }

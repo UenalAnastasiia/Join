@@ -233,6 +233,7 @@ button:last-child:hover {
 .list-choice-objects label:nth-last-of-type(1) span {
   border-radius:0 0 0.2em 0.2em;
 }
+
 .list-choice input[type="radio"] + span {
   color: black;
   background: white;
