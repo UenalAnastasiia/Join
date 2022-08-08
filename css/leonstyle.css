@@ -398,7 +398,6 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-left: 8px;
   padding-top: 4px;
 }
 
@@ -553,5 +552,5 @@ h1 {
   display: flex;
   flex-direction: column;
   margin-left: 200px;
-  padding: 0 12px;
+  padding: 32px 0 0 42px;
 }

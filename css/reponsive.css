@@ -57,7 +57,7 @@
   }
 
   .header-navbar {
-    display: none;
+    display: none !important;
   }
 
   .resp-menu-links {
@@ -154,6 +154,26 @@
 
   .openTaskBoardContent {
     overflow: auto;
+  }
+
+  .helpContainer {
+    width: 100% !important;
+    margin-top: 90px !important;
+  }
+
+  .card__title {
+    font-size: 20px !important;
+  }
+
+  .card {
+    width: 100% !important;
+    margin: 20px 0!important;
+    box-sizing: border-box !important;
+  }
+
+  .privacy {
+    margin-left: 0 !important;
+    margin-top: 60px !important;
   }
 
 }

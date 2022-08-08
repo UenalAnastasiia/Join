@@ -213,14 +213,21 @@ window.addEventListener("resize", function () {
 });
 
 function chooseAssignedAccountBacklog(position, name, email) {
-  let border = document.getElementById("workerBacklog-" + position);
-  if (border.style.border == "1px solid red") {
-    border.style.border = "none";
+  workerBorderWhite();
+  let workerBorder = document.getElementById("workerBacklog-" + position);
+  if (workerBorder.style.border == "1px solid red") {
+    workerBorder.style.border = "1px solid white";
   } else {
-    border.style.border = "1px solid red";
+    workerBorder.style.border = "1px solid red";
   }
   worker = name;
   taskEmail = email;
+}
+
+function workerBorderWhite() {
+  document.getElementById("workerBacklog-1").style.border = "1px solid white";
+  document.getElementById("workerBacklog-2").style.border = "1px solid white";
+  document.getElementById("workerBacklog-3").style.border = "1px solid white";
 }
 
 function categoryBgColors(i) {
